@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Saurabh Deep Rai | CCaaS Consultant</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    html { scroll-behavior: smooth; }
+    .glass { background: rgba(255,255,255,0.08); backdrop-filter: blur(18px); }
+    .glow { box-shadow: 0 0 0 1px rgba(255,255,255,0.08), 0 20px 60px rgba(0,0,0,0.35); }
+    .marquee-track {
+      display: flex;
+      width: max-content;
+      animation: marquee 24s linear infinite;
+    }
+    .marquee-track:hover { animation-play-state: paused; }
+    @keyframes marquee {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
+    }
+    .section-panel {
+      max-height: 0;
+      overflow: hidden;
+      opacity: 0;
+      transition: max-height 0.5s ease, opacity 0.35s ease, margin-top 0.35s ease;
+      margin-top: 0;
+    }
+    .section-card:hover .section-panel,
+    .section-card:focus-within .section-panel {
+      max-height: 1200px;
+      opacity: 1;
+      margin-top: 18px;
+    }
+    .experience-card .experience-panel {
+      max-height: 0;
+      overflow: hidden;
+      opacity: 0;
+      transition: max-height 0.55s ease, opacity 0.35s ease, margin-top 0.35s ease;
+      margin-top: 0;
+    }
+    .experience-card:hover .experience-panel,
+    .experience-card:focus-within .experience-panel {
+      max-height: 800px;
+      opacity: 1;
+      margin-top: 18px;
+    }
+    .floating {
+      animation: floaty 4.8s ease-in-out infinite;
+    }
+    @keyframes floaty {
+      0%,100% { transform: translateY(0px); }
+      50% { transform: translateY(-6px); }
+    }
+  </style>
+</head>
+<body class="bg-gradient-to-br from-slate-950 via-indigo-950 to-cyan-950 text-slate-100 min-h-screen overflow-x-hidden">
+  <div class="absolute inset-0 overflow-hidden pointer-events-none">
+    <div class="absolute -top-24 -left-24 h-80 w-80 rounded-full bg-cyan-400/20 blur-3xl"></div>
+    <div class="absolute top-32 right-0 h-96 w-96 rounded-full bg-fuchsia-500/20 blur-3xl"></div>
+    <div class="absolute bottom-0 left-1/3 h-80 w-80 rounded-full bg-indigo-500/20 blur-3xl"></div>
+  </div>
+
+  <main class="relative max-w-7xl mx-auto px-5 py-8 md:px-8 md:py-12">
+    <section class="glass glow rounded-[34px] border border-white/10 overflow-hidden">
+      <div class="grid lg:grid-cols-[1.3fr_0.85fr]">
+        <div class="p-8 md:p-12 lg:p-14">
+          <span class="inline-flex items-center rounded-full border border-cyan-300/30 bg-cyan-400/10 px-4 py-2 text-sm font-medium text-cyan-200">Senior Consultant | Genesys Cloud & Dynamics 365 Contact Center</span>
+          <div class="flex flex-col sm:flex-row sm:items-center gap-6 mt-6">
+            <div class="relative">
+              <div class="absolute inset-0 rounded-full bg-cyan-400/30 blur-xl"></div>
+              <img src="./images/profile.png" class="relative w-24 h-24 md:w-28 md:h-28 rounded-full object-cover border-2 border-white/30 shadow-2xl" />
+            </div>
+            <div>
+              <h1 class="text-4xl md:text-6xl font-bold tracking-tight leading-tight">Saurabh Deep Rai</h1>
+              <p class="mt-2 text-cyan-100/90 text-base md:text-lg">Building modern contact center experiences with Genesys Cloud, Dynamics 365, IVR, routing, and AI automation.</p>
+            </div>
+          </div>
+          <p class="mt-5 max-w-3xl text-lg md:text-xl leading-8 text-slate-200/90">Senior Consultant with 7+ years of experience in CCaaS solutions, specializing in Genesys Cloud and Dynamics 365 Contact Center, IVR design, intelligent routing, API integration, and AI-driven automation.</p>
+
+          <div class="mt-8 flex flex-wrap gap-3">
+            <span class="rounded-full bg-indigo-400/15 px-4 py-2 text-sm text-indigo-100 border border-indigo-300/20">IVR Design</span>
+            <span class="rounded-full bg-cyan-400/15 px-4 py-2 text-sm text-cyan-100 border border-cyan-300/20">Routing Logic</span>
+            <span class="rounded-full bg-fuchsia-400/15 px-4 py-2 text-sm text-fuchsia-100 border border-fuchsia-300/20">Data Actions & APIs</span>
+            <span class="rounded-full bg-emerald-400/15 px-4 py-2 text-sm text-emerald-100 border border-emerald-300/20">AI Automation</span>
+          </div>
+
+          <div class="mt-8 flex flex-wrap gap-3">
+            <a href="./assets/resume/Saurabh_Deep_Rai_Resume.docx" download class="inline-flex items-center gap-2 rounded-full bg-white text-slate-950 px-5 py-3 text-sm font-semibold shadow-lg shadow-white/10 hover:-translate-y-0.5 hover:scale-[1.02] transition-all duration-300">Download Resume</a>
+            <a href="https://www.linkedin.com/in/saurabh-deep-rai-7302671a1/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-3 rounded-full border border-cyan-300/25 bg-cyan-400/10 px-3 py-2.5 text-sm font-semibold text-cyan-100 hover:bg-cyan-400/20 hover:-translate-y-0.5 transition-all duration-300 shadow-lg shadow-cyan-950/30">
+              <span class="flex h-10 w-10 items-center justify-center rounded-full bg-white/90 shadow-inner"><img src="./images/linkdin.png" alt="LinkedIn" class="h-5 w-5 object-contain rounded-full" /></span>
+              <span class="pr-2">LinkedIn</span>
+            </a>
+            <a href="mailto:sdfrmgkp09@gmail.com" class="inline-flex items-center gap-3 rounded-full border border-emerald-300/25 bg-emerald-400/10 px-5 py-3 text-sm font-semibold text-emerald-100 hover:bg-emerald-400/20 hover:-translate-y-0.5 transition-all duration-300 shadow-lg shadow-emerald-950/30">Email</a>
+            <a href="tel:+917518333121" class="inline-flex items-center gap-3 rounded-full border border-blue-300/25 bg-blue-400/10 px-3 py-2.5 text-sm font-semibold text-blue-100 hover:bg-blue-400/20 hover:-translate-y-0.5 transition-all duration-300 shadow-lg shadow-blue-950/30">
+              <span class="flex h-10 w-10 items-center justify-center rounded-full bg-white/90 shadow-inner"><img src="./images/phone.png" alt="Call" class="h-5 w-5 object-contain rounded-full" /></span>
+              <span class="pr-2">Call</span>
+            </a>
+            <a href="https://wa.me/917518333121" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-3 rounded-full border border-green-300/25 bg-green-400/10 px-3 py-2.5 text-sm font-semibold text-green-100 hover:bg-green-400/20 hover:-translate-y-0.5 transition-all duration-300 shadow-lg shadow-green-950/30">
+              <span class="flex h-10 w-10 items-center justify-center rounded-full bg-white/90 shadow-inner"><img src="./images/whatsapp.png" alt="WhatsApp" class="h-5 w-5 object-contain rounded-full" /></span>
+              <span class="pr-2">WhatsApp</span>
+            </a>
+          </div>
+
+          <div class="mt-10 grid sm:grid-cols-3 gap-4">
+            <div class="rounded-2xl bg-white/10 border border-white/10 p-5">
+              <p class="text-sm text-slate-300">Experience</p>
+              <p class="mt-2 text-2xl font-bold">7+ Years</p>
+            </div>
+            <div class="rounded-2xl bg-white/10 border border-white/10 p-5">
+              <p class="text-sm text-slate-300">Platforms</p>
+              <p class="mt-2 text-2xl font-bold">Genesys + D365</p>
+            </div>
+            <div class="rounded-2xl bg-white/10 border border-white/10 p-5">
+              <p class="text-sm text-slate-300">Focus</p>
+              <p class="mt-2 text-2xl font-bold">CCaaS & Automation</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-gradient-to-br from-cyan-400/15 via-indigo-500/15 to-fuchsia-500/15 border-l border-white/10 p-8 md:p-12 lg:p-14 flex flex-col justify-center">
+          <div class="rounded-3xl bg-slate-950/40 border border-white/10 p-6 shadow-xl">
+            <h2 class="text-xl font-semibold">Contact</h2>
+            <div class="mt-5 space-y-5 text-slate-200">
+              <div>
+                <p class="text-sm text-slate-400">Location</p>
+                <p class="mt-1 font-medium">Gurgaon, India</p>
+              </div>
+              <div>
+                <p class="text-sm text-slate-400">Phone</p>
+                <p class="mt-1 font-medium">+91-7518333121</p>
+              </div>
+              <div>
+                <p class="text-sm text-slate-400">Email</p>
+                <p class="mt-1 font-medium break-all">sdfrmgkp09@gmail.com</p>
+              </div>
+            </div>
+            <div class="mt-6 flex items-center gap-3">
+              <a href="https://www.linkedin.com/in/saurabh-deep-rai-7302671a1/" target="_blank" rel="noopener noreferrer" class="flex h-12 w-12 items-center justify-center rounded-full border border-white/15 bg-white/10 hover:bg-white/15 transition-colors"><img src="./images/linkdin.png" alt="LinkedIn" class="h-5 w-5 rounded-full object-contain" /></a>
+              <a href="tel:+917518333121" class="flex h-12 w-12 items-center justify-center rounded-full border border-white/15 bg-white/10 hover:bg-white/15 transition-colors"><img src="./images/phone.png" alt="Phone" class="h-5 w-5 rounded-full object-contain" /></a>
+              <a href="https://wa.me/917518333121" target="_blank" rel="noopener noreferrer" class="flex h-12 w-12 items-center justify-center rounded-full border border-white/15 bg-white/10 hover:bg-white/15 transition-colors"><img src="./images/whatsapp.png" alt="WhatsApp" class="h-5 w-5 rounded-full object-contain" /></a>
+            </div>
+          </div>
+          </div>
+
+          <div class="mt-6 rounded-3xl bg-slate-950/40 border border-white/10 p-6 shadow-xl">
+            <h2 class="text-xl font-semibold">Core Skills</h2>
+            <div class="mt-4 flex flex-wrap gap-2">
+              <span class="rounded-full bg-white/10 px-3 py-2 text-sm">Genesys Cloud</span>
+              <span class="rounded-full bg-white/10 px-3 py-2 text-sm">Dynamics 365 Contact Center</span>
+              <span class="rounded-full bg-white/10 px-3 py-2 text-sm">IVR & DTMF</span>
+              <span class="rounded-full bg-white/10 px-3 py-2 text-sm">Routing</span>
+              <span class="rounded-full bg-white/10 px-3 py-2 text-sm">Dataverse</span>
+              <span class="rounded-full bg-white/10 px-3 py-2 text-sm">Dialogflow</span>
+              <span class="rounded-full bg-white/10 px-3 py-2 text-sm">Amazon Lex</span>
+              <span class="rounded-full bg-white/10 px-3 py-2 text-sm">Copilot Studio</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="mt-8 glass glow rounded-[28px] border border-white/10 p-6 md:p-8 overflow-hidden">
+      <div class="flex items-center justify-between gap-4 flex-wrap">
+        <div>
+          <h2 class="text-2xl md:text-3xl font-bold">Technology Stack</h2>
+          <p class="mt-2 text-slate-300">Hover on the cards below to explore details and technologies.</p>
+        </div>
+        <span class="rounded-full border border-fuchsia-300/30 bg-fuchsia-400/10 px-4 py-2 text-sm text-fuchsia-100">Interactive Portfolio</span>
+      </div>
+      <div class="mt-6 overflow-hidden rounded-3xl border border-white/10 bg-slate-950/30">
+        <div class="marquee-track py-5">
+          <div class="mx-3 floating rounded-2xl border border-cyan-300/20 bg-cyan-400/10 px-5 py-4 min-w-[180px] text-center">
+            <img src="./images/genesys.png" class="h-10 mx-auto" /><div class="mt-2 text-sm">Genesys Cloud</div>
+          </div>
+          <div class="mx-3 floating rounded-2xl border border-blue-300/20 bg-blue-400/10 px-5 py-4 min-w-[180px] text-center" style="animation-delay:.3s">
+            <img src="./images/dynamics365.png" class="h-10 mx-auto" /><div class="mt-2 text-sm">Dynamics 365</div>
+          </div>
+          <div class="mx-3 floating rounded-2xl border border-amber-300/20 bg-amber-400/10 px-5 py-4 min-w-[180px] text-center" style="animation-delay:.6s">
+            <img src="./images/amazon-lex.png" class="h-10 mx-auto" /><div class="mt-2 text-sm">Amazon Lex</div>
+          </div>
+          <div class="mx-3 floating rounded-2xl border border-emerald-300/20 bg-emerald-400/10 px-5 py-4 min-w-[180px] text-center" style="animation-delay:.9s">
+            <img src="./images/dialogflow.png" class="h-10 mx-auto" /><div class="mt-2 text-sm">Dialogflow</div>
+          </div>
+          <div class="mx-3 floating rounded-2xl border border-fuchsia-300/20 bg-fuchsia-400/10 px-5 py-4 min-w-[180px] text-center" style="animation-delay:1.2s">
+            <div class="text-2xl font-bold text-fuchsia-200">CP</div><div class="mt-1 text-sm">Copilot Studio</div>
+          </div>
+          <div class="mx-3 floating rounded-2xl border border-indigo-300/20 bg-indigo-400/10 px-5 py-4 min-w-[180px] text-center" style="animation-delay:1.5s">
+            <div class="text-2xl font-bold text-indigo-200">API</div><div class="mt-1 text-sm">REST & Data Actions</div>
+          </div>
+          <div class="mx-3 floating rounded-2xl border border-cyan-300/20 bg-cyan-400/10 px-5 py-4 min-w-[180px] text-center">
+            <img src="./images/genesys.png" class="h-10 mx-auto" /><div class="mt-2 text-sm">Genesys Cloud</div>
+          </div>
+          <div class="mx-3 floating rounded-2xl border border-blue-300/20 bg-blue-400/10 px-5 py-4 min-w-[180px] text-center" style="animation-delay:.3s">
+            <img src="./images/dynamics365.png" class="h-10 mx-auto" /><div class="mt-2 text-sm">Dynamics 365</div>
+          </div>
+          <div class="mx-3 floating rounded-2xl border border-amber-300/20 bg-amber-400/10 px-5 py-4 min-w-[180px] text-center" style="animation-delay:.6s">
+            <img src="./images/amazon-lex.png" class="h-10 mx-auto" /><div class="mt-2 text-sm">Amazon Lex</div>
+          </div>
+          <div class="mx-3 floating rounded-2xl border border-emerald-300/20 bg-emerald-400/10 px-5 py-4 min-w-[180px] text-center" style="animation-delay:.9s">
+            <img src="./images/dialogflow.png" class="h-10 mx-auto" /><div class="mt-2 text-sm">Dialogflow</div>
+          </div>
+          <div class="mx-3 floating rounded-2xl border border-fuchsia-300/20 bg-fuchsia-400/10 px-5 py-4 min-w-[180px] text-center" style="animation-delay:1.2s">
+            <div class="text-2xl font-bold text-fuchsia-200">CP</div><div class="mt-1 text-sm">Copilot Studio</div>
+          </div>
+          <div class="mx-3 floating rounded-2xl border border-indigo-300/20 bg-indigo-400/10 px-5 py-4 min-w-[180px] text-center" style="animation-delay:1.5s">
+            <div class="text-2xl font-bold text-indigo-200">API</div><div class="mt-1 text-sm">REST & Data Actions</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="grid md:grid-cols-4 gap-4 mt-8">
+      <div class="section-card glass glow rounded-[26px] border border-white/10 p-5">
+        <button class="w-full text-left rounded-2xl bg-gradient-to-r from-cyan-400/20 to-blue-500/20 border border-cyan-300/20 px-5 py-4 font-semibold text-lg">Key Achievements</button>
+        <div class="section-panel">
+          <div class="space-y-3">
+            <div class="rounded-2xl bg-slate-950/35 border border-white/10 p-4">Implemented AI-powered virtual agents that helped achieve <strong>10–15% call deflection</strong> and reduced dependency on live agents.</div>
+            <div class="rounded-2xl bg-slate-950/35 border border-white/10 p-4">Built an intelligent IVR and API integration framework that improved <strong>self-service containment by 15–20%</strong>.</div>
+            <div class="rounded-2xl bg-slate-950/35 border border-white/10 p-4">Optimized IVR call flows and automation logic, reducing <strong>inbound call volume to agents by 10–15%</strong>.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-card glass glow rounded-[26px] border border-white/10 p-5">
+        <button class="w-full text-left rounded-2xl bg-gradient-to-r from-indigo-400/20 to-fuchsia-500/20 border border-indigo-300/20 px-5 py-4 font-semibold text-lg">Professional Experience</button>
+        <div class="section-panel">
+          <div class="text-slate-300 leading-7 rounded-2xl bg-slate-950/35 border border-white/10 p-4">Hover on each organization card below to open detailed responsibilities and achievements for that experience.</div>
+        </div>
+      </div>
+
+      <div class="section-card glass glow rounded-[26px] border border-white/10 p-5">
+        <button class="w-full text-left rounded-2xl bg-gradient-to-r from-emerald-400/20 to-teal-500/20 border border-emerald-300/20 px-5 py-4 font-semibold text-lg">Education</button>
+        <div class="section-panel">
+          <div class="rounded-2xl bg-slate-950/35 border border-white/10 p-4">
+            <p class="font-semibold">B.Tech – Electronics & Communication Engineering</p>
+            <p class="mt-2 text-slate-300">Abdul Kalam Technical University (AKTU), Lucknow</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-card glass glow rounded-[26px] border border-white/10 p-5">
+        <button class="w-full text-left rounded-2xl bg-gradient-to-r from-amber-400/20 to-orange-500/20 border border-amber-300/20 px-5 py-4 font-semibold text-lg">Awards</button>
+        <div class="section-panel">
+          <div class="rounded-2xl bg-slate-950/35 border border-white/10 p-4">
+            <p class="font-semibold">Infosys Insta Award (2x)</p>
+            <p class="mt-2 text-slate-300">Recognized for outstanding performance and delivery excellence.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="mt-8 glass glow rounded-[28px] border border-white/10 p-6 md:p-8">
+      <div class="flex items-center justify-between gap-4 flex-wrap">
+        <div>
+          <h2 class="text-2xl md:text-3xl font-bold">Professional Experience</h2>
+          <p class="mt-2 text-slate-300">Hover on the organization card to open responsibilities, tools, and impact.</p>
+        </div>
+        <span class="rounded-full border border-cyan-300/30 bg-cyan-400/10 px-4 py-2 text-sm text-cyan-100">Contact Center | Omnichannel | Automation</span>
+      </div>
+
+      <div class="mt-8 grid lg:grid-cols-3 gap-6">
+        <article class="experience-card rounded-[28px] border border-white/10 bg-slate-950/35 p-6">
+          <div class="flex items-center gap-4">
+            <div class="h-14 w-14 rounded-2xl bg-gradient-to-br from-emerald-300 to-emerald-600 text-slate-950 flex items-center justify-center font-bold text-lg">D</div>
+            <div>
+              <div class="flex items-center gap-3"><img src="./images/deloitte.png" class="h-6"/><h3 class="text-xl font-semibold">Deloitte India</h3></div>
+              <p class="text-slate-400 text-sm">Senior Consultant | Dec 2025 – Present</p>
+            </div>
+          </div>
+          <div class="experience-panel">
+            <ul class="mt-4 space-y-3 text-slate-200 leading-7 list-disc pl-5">
+              <li>Configure and implement Genesys Cloud and Dynamics 365 Contact Center solutions based on business requirements.</li>
+              <li>Design and manage IVR call flows and routing logic including skills-based routing, queues, and DTMF handling.</li>
+              <li>Develop and maintain Data Actions and API integrations between Genesys, Dynamics, Dataverse, and backend platforms.</li>
+              <li>Support omnichannel setup across voice, chat, and messaging for smooth customer and agent experience.</li>
+              <li>Perform troubleshooting for call flows, integrations, and telephony issues including SIP-related analysis.</li>
+              <li>Collaborate with stakeholders for requirement gathering, testing, deployment, and production support.</li>
+            </ul>
+            <div class="mt-4 flex flex-wrap gap-2">
+              <span class="rounded-full bg-white/10 px-3 py-1.5 text-sm">Genesys Cloud</span>
+              <span class="rounded-full bg-white/10 px-3 py-1.5 text-sm">Dynamics 365</span>
+              <span class="rounded-full bg-white/10 px-3 py-1.5 text-sm">Dataverse</span>
+              <span class="rounded-full bg-white/10 px-3 py-1.5 text-sm">Omnichannel</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="experience-card rounded-[28px] border border-white/10 bg-slate-950/35 p-6">
+          <div class="flex items-center gap-4">
+            <div class="h-14 w-14 rounded-2xl bg-gradient-to-br from-sky-300 to-blue-600 text-slate-950 flex items-center justify-center font-bold text-lg">I</div>
+            <div>
+              <div class="flex items-center gap-3"><img src="./images/infosys.png" class="h-6"/><h3 class="text-xl font-semibold">Infosys Ltd.</h3></div>
+              <p class="text-slate-400 text-sm">Senior Associate Consultant | Oct 2022 – Dec 2025</p>
+            </div>
+          </div>
+          <div class="experience-panel">
+            <ul class="mt-4 space-y-3 text-slate-200 leading-7 list-disc pl-5">
+              <li>Orchestrated end-to-end delivery of enterprise contact center solutions on Genesys Cloud from design to deployment and monitoring.</li>
+              <li>Engineered CRM integrations and Data Actions for real-time API interactions and dynamic IVR enhancements.</li>
+              <li>Administered Genesys Cloud organization including RBAC, divisions, and license governance.</li>
+              <li>Implemented AI-driven virtual agents using Google Dialogflow and Amazon Lex to automate customer interactions.</li>
+              <li>Implemented Microsoft Dynamics 365 Contact Center with Copilot Studio for a unified agent and customer engagement experience.</li>
+              <li>Prepared technical documentation, training material, and supported go-live and continuous optimization.</li>
+            </ul>
+            <div class="mt-4 flex flex-wrap gap-2">
+              <span class="rounded-full bg-white/10 px-3 py-1.5 text-sm">Amazon Lex</span>
+              <span class="rounded-full bg-white/10 px-3 py-1.5 text-sm">Dialogflow</span>
+              <span class="rounded-full bg-white/10 px-3 py-1.5 text-sm">Copilot Studio</span>
+              <span class="rounded-full bg-white/10 px-3 py-1.5 text-sm">API Integration</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="experience-card rounded-[28px] border border-white/10 bg-slate-950/35 p-6">
+          <div class="flex items-center gap-4">
+            <div class="h-14 w-14 rounded-2xl bg-gradient-to-br from-fuchsia-300 to-fuchsia-600 text-slate-950 flex items-center justify-center font-bold text-lg">M</div>
+            <div>
+              <div class="flex items-center gap-3"><img src="./images/moksa.png" class="h-6"/><h3 class="text-xl font-semibold">Moksa Technologies</h3></div>
+              <p class="text-slate-400 text-sm">Associate Consultant | Jan 2020 – Oct 2022</p>
+            </div>
+          </div>
+          <div class="experience-panel">
+            <ul class="mt-4 space-y-3 text-slate-200 leading-7 list-disc pl-5">
+              <li>Managed multi-site Genesys Cloud and Pure Engage environments with a focus on stability and operations support.</li>
+              <li>Leveraged CCPulse and Hyperion analytics for performance monitoring and service level improvement.</li>
+              <li>Owned incident handling, RCA activities, and troubleshooting using Genesys logs, GAX, and SIP traces.</li>
+              <li>Optimized omnichannel routing strategies and IVR call flows to improve customer satisfaction and agent efficiency.</li>
+              <li>Governed user provisioning, RBAC, upgrades, and production environment maintenance.</li>
+            </ul>
+            <div class="mt-4 flex flex-wrap gap-2">
+              <span class="rounded-full bg-white/10 px-3 py-1.5 text-sm">Pure Engage</span>
+              <span class="rounded-full bg-white/10 px-3 py-1.5 text-sm">SIP Tracing</span>
+              <span class="rounded-full bg-white/10 px-3 py-1.5 text-sm">CCPulse</span>
+              <span class="rounded-full bg-white/10 px-3 py-1.5 text-sm">Operations Support</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="grid lg:grid-cols-[1.1fr_0.9fr] gap-6 mt-8">
+      <div class="glass glow rounded-[28px] border border-white/10 p-8">
+        <h2 class="text-2xl md:text-3xl font-bold">About Me</h2>
+        <p class="mt-5 text-slate-200/90 leading-8">I work across contact center transformation, IVR modernization, intelligent routing, API-based integrations, and AI-driven automation. My experience spans Genesys Cloud, Microsoft Dynamics 365 Contact Center, Dialogflow, Amazon Lex, and Copilot Studio, with a strong focus on building self-service journeys that improve customer experience and reduce agent workload.</p>
+      </div>
+      <div class="glass glow rounded-[28px] border border-white/10 p-8">
+        <h2 class="text-2xl md:text-3xl font-bold">Projects</h2>
+        <div class="mt-5 space-y-4">
+          <div class="rounded-2xl border border-white/10 bg-slate-950/35 p-5">
+            <p class="font-semibold text-lg">AI-Powered Virtual Agent Implementation</p>
+            <p class="mt-2 text-slate-300 leading-7">Designed and deployed AI-driven virtual agents using Dialogflow and Amazon Lex, integrated with contact center workflows to automate customer queries and reduce dependency on live agents.</p>
+          </div>
+          <div class="rounded-2xl border border-white/10 bg-slate-950/35 p-5">
+            <p class="font-semibold text-lg">Intelligent IVR & API Integration Framework</p>
+            <p class="mt-2 text-slate-300 leading-7">Built a dynamic IVR framework integrated with backend systems via APIs and Data Actions for real-time validation, personalized journeys, and better self-service containment.</p>
+          </div>
+          <div class="rounded-2xl border border-white/10 bg-slate-950/35 p-5">
+            <p class="font-semibold text-lg">Dynamics 365 Contact Center Implementation</p>
+            <p class="mt-2 text-slate-300 leading-7">Implemented Microsoft Dynamics 365 Contact Center with Copilot Studio and omnichannel capabilities to deliver a unified customer and agent experience.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
