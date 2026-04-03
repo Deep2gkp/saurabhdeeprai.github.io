@@ -52,13 +52,15 @@
       transition: max-height 0.5s ease, opacity 0.35s ease, margin-top 0.35s ease;
     }
 
-    .section-card:hover .section-panel,
-    .section-card:focus-within .section-panel,
-    .experience-card:hover .experience-panel,
-    .experience-card:focus-within .experience-panel {
-      max-height: 1200px;
-      opacity: 1;
-      margin-top: 18px;
+    @media (min-width: 768px) {
+      .section-card:hover .section-panel,
+      .section-card:focus-within .section-panel,
+      .experience-card:hover .experience-panel,
+      .experience-card:focus-within .experience-panel {
+        max-height: 1200px;
+        opacity: 1;
+        margin-top: 18px;
+      }
     }
 
     .mobile-panel {
@@ -116,19 +118,10 @@
       height: 12px;
     }
 
-    @media (max-width: 767px), (pointer: coarse) {
+    @media (max-width: 767px) {
       .cursor-glow,
       .cursor-dot {
         display: none;
-      }
-
-      .section-card:hover .section-panel,
-      .section-card:focus-within .section-panel,
-      .experience-card:hover .experience-panel,
-      .experience-card:focus-within .experience-panel {
-        max-height: 0;
-        opacity: 0;
-        margin-top: 0;
       }
     }
   </style>
