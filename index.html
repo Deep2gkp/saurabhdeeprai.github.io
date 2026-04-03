@@ -52,9 +52,96 @@
       0%,100% { transform: translateY(0px); }
       50% { transform: translateY(-6px); }
     }
+    .mobile-panel {
+      max-height: 0;
+      overflow: hidden;
+      opacity: 0;
+      transition: max-height 0.35s ease, opacity 0.25s ease, margin-top 0.25s ease;
+      margin-top: 0;
+    }
+    .mobile-panel.open {
+      max-height: 2000px;
+      opacity: 1;
+      margin-top: 14px;
+    }
+    @media (max-width: 767px) {
+      .section-card:hover .section-panel,
+      .section-card:focus-within .section-panel,
+      .experience-card:hover .experience-panel,
+      .experience-card:focus-within .experience-panel {
+        max-height: 0;
+        opacity: 0;
+        margin-top: 0;
+      }
+    }
   </style>
 </head>
 <body class="bg-gradient-to-br from-slate-950 via-indigo-950 to-cyan-950 text-slate-100 min-h-screen overflow-x-hidden">
+  <button id="mobileMenuButton" class="fixed top-4 right-4 z-50 md:hidden flex h-12 w-12 items-center justify-center rounded-full border border-white/15 bg-slate-900/80 backdrop-blur-xl shadow-xl" aria-label="Open menu">
+    <span class="space-y-1.5">
+      <span class="block h-0.5 w-5 bg-white"></span>
+      <span class="block h-0.5 w-5 bg-white"></span>
+      <span class="block h-0.5 w-5 bg-white"></span>
+    </span>
+  </button>
+
+  <div id="mobileMenuOverlay" class="fixed inset-0 z-40 hidden md:hidden bg-slate-950/70 backdrop-blur-sm"></div>
+  <aside id="mobileMenu" class="fixed top-0 right-0 z-50 h-full w-[86%] max-w-sm translate-x-full md:hidden border-l border-white/10 bg-slate-950/95 backdrop-blur-2xl p-6 transition-transform duration-300 ease-out overflow-y-auto">
+    <div class="flex items-center justify-between">
+      <h2 class="text-xl font-semibold">Menu</h2>
+      <button id="mobileMenuClose" class="flex h-10 w-10 items-center justify-center rounded-full border border-white/15 bg-white/5 text-white">✕</button>
+    </div>
+
+    <div class="mt-6 space-y-4">
+      <button class="mobile-toggle w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-4 text-left font-semibold" data-target="m-achievements">Key Achievements</button>
+      <div id="m-achievements" class="mobile-panel rounded-2xl border border-white/10 bg-white/5 p-4">
+        <div class="space-y-3 text-slate-200">
+          <div>Implemented AI-powered virtual agents that helped achieve <strong>10–15% call deflection</strong> and reduced dependency on live agents.</div>
+          <div>Built an intelligent IVR and API integration framework that improved <strong>self-service containment by 15–20%</strong>.</div>
+          <div>Optimized IVR call flows and automation logic, reducing <strong>inbound call volume to agents by 10–15%</strong>.</div>
+        </div>
+      </div>
+
+      <button class="mobile-toggle w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-4 text-left font-semibold" data-target="m-experience">Professional Experience</button>
+      <div id="m-experience" class="mobile-panel rounded-2xl border border-white/10 bg-white/5 p-4">
+        <div class="space-y-4 text-slate-200">
+          <div>
+            <p class="font-semibold">Deloitte India</p>
+            <p class="text-sm text-slate-400">Senior Consultant | Dec 2025 – Present</p>
+          </div>
+          <div>
+            <p class="font-semibold">Infosys Ltd.</p>
+            <p class="text-sm text-slate-400">Senior Associate Consultant | Oct 2022 – Dec 2025</p>
+          </div>
+          <div>
+            <p class="font-semibold">Moksa Technologies</p>
+            <p class="text-sm text-slate-400">Associate Consultant | Jan 2020 – Oct 2022</p>
+          </div>
+        </div>
+      </div>
+
+      <button class="mobile-toggle w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-4 text-left font-semibold" data-target="m-projects">Projects</button>
+      <div id="m-projects" class="mobile-panel rounded-2xl border border-white/10 bg-white/5 p-4">
+        <div class="space-y-4 text-slate-200">
+          <div><p class="font-semibold">AI-Powered Virtual Agent Implementation</p><p class="mt-1 text-sm text-slate-300">Dialogflow and Amazon Lex based automation for customer queries.</p></div>
+          <div><p class="font-semibold">Intelligent IVR & API Integration Framework</p><p class="mt-1 text-sm text-slate-300">Dynamic IVR integrated with backend APIs and Data Actions.</p></div>
+          <div><p class="font-semibold">Dynamics 365 Contact Center Implementation</p><p class="mt-1 text-sm text-slate-300">Unified omnichannel experience with Copilot Studio integration.</p></div>
+        </div>
+      </div>
+
+      <button class="mobile-toggle w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-4 text-left font-semibold" data-target="m-education">Education</button>
+      <div id="m-education" class="mobile-panel rounded-2xl border border-white/10 bg-white/5 p-4 text-slate-200">
+        <p class="font-semibold">B.Tech – Electronics & Communication Engineering</p>
+        <p class="mt-1 text-sm text-slate-300">Abdul Kalam Technical University (AKTU), Lucknow</p>
+      </div>
+
+      <button class="mobile-toggle w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-4 text-left font-semibold" data-target="m-awards">Awards</button>
+      <div id="m-awards" class="mobile-panel rounded-2xl border border-white/10 bg-white/5 p-4 text-slate-200">
+        <p class="font-semibold">Infosys Insta Award (2x)</p>
+        <p class="mt-1 text-sm text-slate-300">Recognized for outstanding performance and delivery excellence.</p>
+      </div>
+    </div>
+  </aside>
   <div class="absolute inset-0 overflow-hidden pointer-events-none">
     <div class="absolute -top-24 -left-24 h-80 w-80 rounded-full bg-cyan-400/20 blur-3xl"></div>
     <div class="absolute top-32 right-0 h-96 w-96 rounded-full bg-fuchsia-500/20 blur-3xl"></div>
@@ -325,6 +412,37 @@
       </div>
     </section>
   </main>
+  <script>
+    const mobileMenuButton = document.getElementById('mobileMenuButton');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const mobileMenuOverlay = document.getElementById('mobileMenuOverlay');
+    const mobileMenuClose = document.getElementById('mobileMenuClose');
+
+    function openMenu() {
+      mobileMenu.classList.remove('translate-x-full');
+      mobileMenuOverlay.classList.remove('hidden');
+      document.body.classList.add('overflow-hidden');
+    }
+
+    function closeMenu() {
+      mobileMenu.classList.add('translate-x-full');
+      mobileMenuOverlay.classList.add('hidden');
+      document.body.classList.remove('overflow-hidden');
+    }
+
+    mobileMenuButton?.addEventListener('click', openMenu);
+    mobileMenuClose?.addEventListener('click', closeMenu);
+    mobileMenuOverlay?.addEventListener('click', closeMenu);
+
+    document.querySelectorAll('.mobile-toggle').forEach((button) => {
+      button.addEventListener('click', () => {
+        const targetId = button.getAttribute('data-target');
+        const panel = document.getElementById(targetId);
+        const isOpen = panel.classList.contains('open');
+        document.querySelectorAll('.mobile-panel').forEach((p) => p.classList.remove('open'));
+        if (!isOpen) panel.classList.add('open');
+      });
+    });
+  </script>
 </body>
 </html>
-
