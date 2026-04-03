@@ -93,7 +93,7 @@
     </div>
 
     <div class="mt-6 space-y-4">
-      <button class="mobile-toggle w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-4 text-left font-semibold" data-target="m-achievements">Key Achievements</button>
+      <button class="mobile-toggle w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-4 text-left font-semibold flex items-center justify-between" data-target="m-achievements"><span>Key Achievements</span><span class="text-slate-400">+</span></button>
       <div id="m-achievements" class="mobile-panel rounded-2xl border border-white/10 bg-white/5 p-4">
         <div class="space-y-3 text-slate-200">
           <div>Implemented AI-powered virtual agents that helped achieve <strong>10–15% call deflection</strong> and reduced dependency on live agents.</div>
@@ -102,7 +102,7 @@
         </div>
       </div>
 
-      <button class="mobile-toggle w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-4 text-left font-semibold" data-target="m-experience">Professional Experience</button>
+      <button class="mobile-toggle w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-4 text-left font-semibold flex items-center justify-between" data-target="m-experience"><span>Professional Experience</span><span class="text-slate-400">+</span></button>
       <div id="m-experience" class="mobile-panel rounded-2xl border border-white/10 bg-white/5 p-4">
         <div class="space-y-4 text-slate-200">
           <div>
@@ -120,7 +120,7 @@
         </div>
       </div>
 
-      <button class="mobile-toggle w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-4 text-left font-semibold" data-target="m-projects">Projects</button>
+      <button class="mobile-toggle w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-4 text-left font-semibold flex items-center justify-between" data-target="m-projects"><span>Projects</span><span class="text-slate-400">+</span></button>
       <div id="m-projects" class="mobile-panel rounded-2xl border border-white/10 bg-white/5 p-4">
         <div class="space-y-4 text-slate-200">
           <div><p class="font-semibold">AI-Powered Virtual Agent Implementation</p><p class="mt-1 text-sm text-slate-300">Dialogflow and Amazon Lex based automation for customer queries.</p></div>
@@ -129,13 +129,13 @@
         </div>
       </div>
 
-      <button class="mobile-toggle w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-4 text-left font-semibold" data-target="m-education">Education</button>
+      <button class="mobile-toggle w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-4 text-left font-semibold flex items-center justify-between" data-target="m-education"><span>Education</span><span class="text-slate-400">+</span></button>
       <div id="m-education" class="mobile-panel rounded-2xl border border-white/10 bg-white/5 p-4 text-slate-200">
         <p class="font-semibold">B.Tech – Electronics & Communication Engineering</p>
         <p class="mt-1 text-sm text-slate-300">Abdul Kalam Technical University (AKTU), Lucknow</p>
       </div>
 
-      <button class="mobile-toggle w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-4 text-left font-semibold" data-target="m-awards">Awards</button>
+      <button class="mobile-toggle w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-4 text-left font-semibold flex items-center justify-between" data-target="m-awards"><span>Awards</span><span class="text-slate-400">+</span></button>
       <div id="m-awards" class="mobile-panel rounded-2xl border border-white/10 bg-white/5 p-4 text-slate-200">
         <p class="font-semibold">Infosys Insta Award (2x)</p>
         <p class="mt-1 text-sm text-slate-300">Recognized for outstanding performance and delivery excellence.</p>
@@ -438,10 +438,18 @@
       button.addEventListener('click', () => {
         const targetId = button.getAttribute('data-target');
         const panel = document.getElementById(targetId);
+        const icon = button.querySelector('span:last-child');
         const isOpen = panel.classList.contains('open');
+
         document.querySelectorAll('.mobile-panel').forEach((p) => p.classList.remove('open'));
-        if (!isOpen) panel.classList.add('open');
+        document.querySelectorAll('.mobile-toggle span:last-child').forEach((i) => i.textContent = '+');
+
+        if (!isOpen) {
+          panel.classList.add('open');
+          if (icon) icon.textContent = '–';
+        }
       });
+    });
     });
   </script>
 </body>
