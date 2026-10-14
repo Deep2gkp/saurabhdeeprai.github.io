@@ -31,6 +31,7 @@
       scroll-behavior: smooth;
     }
 
+    /* IMPORTANT: Never set perspective/transform/filter on html or body, so position:fixed stays locked to the viewport */
     body {
       background-color: var(--bg-deep);
       color: var(--text-main);
@@ -38,7 +39,6 @@
       line-height: 1.6;
       padding-top: 76px;
       overflow-x: hidden;
-      perspective: 1200px;
     }
 
     /* Simple 3D Ambient Background Perspective Grid */
@@ -81,7 +81,7 @@
       left: 0;
       right: 0;
       height: 74px;
-      background: rgba(6, 9, 19, 0.84);
+      background: rgba(6, 9, 19, 0.86);
       backdrop-filter: blur(16px);
       -webkit-backdrop-filter: blur(16px);
       border-bottom: 1px solid var(--border);
@@ -89,7 +89,7 @@
       align-items: center;
       justify-content: space-between;
       padding: 0 5%;
-      z-index: 900;
+      z-index: 1000;
     }
 
     .logo-container {
@@ -117,7 +117,7 @@
     }
 
     .logo-container:hover .logo-cube {
-      transform: translateY(-4px) rotateX(8deg) rotateY(-8deg);
+      transform: perspective(400px) translateY(-4px) rotateX(8deg) rotateY(-8deg);
       box-shadow:
         0 8px 0 #1e3a8a,
         0 14px 26px rgba(56, 189, 248, 0.45);
@@ -544,21 +544,59 @@
       font-size: 0.82rem;
     }
 
-    /* ==================== FLOATING 3D CHATBOT "TIA" ==================== */
+    /* ==================== FLOATING 3D CHATBOT "TIA" (VIEWPORT-LOCKED) ==================== */
     @keyframes float3D {
       0%, 100% {
         transform: translateY(0px);
       }
       50% {
-        transform: translateY(-6px);
+        transform: translateY(-5px);
       }
+    }
+
+    @keyframes popInTia {
+      0% {
+        opacity: 0;
+        transform: translateY(28px) scale(0.88);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    /* Floating speech callout when minimized */
+    .tia-toast {
+      position: fixed;
+      bottom: 82px;
+      right: 24px;
+      z-index: 9998;
+      background: rgba(13, 20, 36, 0.96);
+      border: 1px solid var(--border-highlight);
+      color: var(--text-main);
+      padding: 10px 15px;
+      border-radius: 14px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      box-shadow:
+        0 8px 0 rgba(6, 9, 19, 0.95),
+        0 18px 36px rgba(0, 0, 0, 0.75);
+      cursor: pointer;
+      display: none;
+      align-items: center;
+      gap: 8px;
+      animation: float3D 3.2s ease-in-out infinite;
+    }
+
+    .tia-toast.visible {
+      display: inline-flex;
     }
 
     .chatbot-launcher {
       position: fixed;
-      bottom: 22px;
+      bottom: 20px;
       right: 24px;
-      z-index: 2000;
+      z-index: 9999;
       display: flex;
       align-items: center;
       gap: 10px;
@@ -585,28 +623,28 @@
 
     .chatbot-window {
       position: fixed;
-      bottom: 86px;
+      bottom: 82px;
       right: 24px;
       width: 365px;
       max-width: calc(100vw - 32px);
-      height: 490px;
-      max-height: calc(100vh - 115px);
-      background: rgba(11, 17, 32, 0.96);
+      height: 470px;
+      max-height: calc(100vh - 110px);
+      background: rgba(11, 17, 32, 0.97);
       backdrop-filter: blur(20px);
       -webkit-backdrop-filter: blur(20px);
       border: 1px solid var(--border-highlight);
       border-radius: 20px;
       box-shadow:
         0 14px 0 -3px rgba(6, 10, 22, 0.98),
-        0 28px 60px rgba(0, 0, 0, 0.82),
-        0 0 35px rgba(56, 189, 248, 0.16);
+        0 28px 60px rgba(0, 0, 0, 0.85),
+        0 0 38px rgba(56, 189, 248, 0.2);
       display: flex;
       flex-direction: column;
       overflow: hidden;
-      z-index: 2000;
+      z-index: 9999;
       transform-origin: bottom right;
-      animation: float3D 4.5s ease-in-out infinite;
-      transition: opacity 0.28s ease, transform 0.28s cubic-bezier(0.22, 1, 0.36, 1);
+      animation: popInTia 0.45s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+      transition: opacity 0.25s ease, transform 0.25s cubic-bezier(0.22, 1, 0.36, 1);
     }
 
     .chatbot-window.hidden {
@@ -617,7 +655,7 @@
     }
 
     .chat-header {
-      background: linear-gradient(135deg, rgba(56, 189, 248, 0.2), rgba(99, 102, 241, 0.2));
+      background: linear-gradient(135deg, rgba(56, 189, 248, 0.22), rgba(99, 102, 241, 0.22));
       border-bottom: 1px solid var(--border);
       padding: 13px 16px;
       display: flex;
@@ -1111,12 +1149,18 @@
     <p>© 2026 Saurabh Deep Rai · Technical Specialist &amp; Senior CCaaS Consultant · Gurgaon, India</p>
   </footer>
 
-  <!-- ==================== FLOATING 3D CHATBOT "TIA" (AUTO POP-UP ON LOAD) ==================== -->
+  <!-- ==================== FLOATING 3D CHATBOT "TIA" (OPEN IMMEDIATELY ON PAGE LOAD) ==================== -->
+  <div id="tiaToast" class="tia-toast" onclick="toggleChat(true)">
+    <span class="status-dot"></span>
+    <span>Hello! I am <strong>Tia</strong> 👋 What do you want to know about Saurabh?</span>
+  </div>
+
   <button class="chatbot-launcher" onclick="toggleChat()" aria-label="Chat with Tia">
     <span>💬 Hi, I'm Tia · Ask Me!</span>
   </button>
 
-  <div id="chatbotWindow" class="chatbot-window hidden">
+  <!-- Open by default (no .hidden class) so Tia pops up immediately at the top of the page without scrolling -->
+  <div id="chatbotWindow" class="chatbot-window">
     <div class="chat-header">
       <div class="chat-header-info">
         <div class="chat-bot-avatar">TIA</div>
@@ -1130,13 +1174,13 @@
 
     <div id="chatMessages" class="chat-messages">
       <div class="msg msg-bot">
-        Hello! 👋 I am <strong>Tia</strong>, Saurabh's virtual assistant. What do you want to know about <strong>Saurabh Deep Rai</strong>? Pick an option below or ask me anything!
+        Hello! 👋 I am <strong>Tia</strong>! What do you want to know about <strong>Saurabh Deep Rai</strong>? Choose any option below or ask me a question:
       </div>
     </div>
 
     <!-- Ever-present options matching the exact portfolio sections -->
     <div class="chat-options-tray">
-      <div class="chat-options-label">Choose a topic</div>
+      <div class="chat-options-label">Choose what to know about Saurabh</div>
       <div class="chat-chips">
         <button class="chat-chip" onclick="handleBotOption('about')">About</button>
         <button class="chat-chip" onclick="handleBotOption('experience')">Experience</button>
@@ -1171,25 +1215,17 @@
       });
     });
 
-    // Tia Chatbot Logic — Auto Pop-Up on Site Open &Synced Answers
+    // Tia Chatbot Logic — Locked to Viewport & Open Immediately on Load
     var chatWindow = document.getElementById('chatbotWindow');
+    var tiaToast = document.getElementById('tiaToast');
     var chatMessages = document.getElementById('chatMessages');
     var chatInput = document.getElementById('chatInput');
 
     function toggleChat(forceState) {
-      if (typeof forceState === 'boolean') {
-        chatWindow.classList.toggle('hidden', !forceState);
-      } else {
-        chatWindow.classList.toggle('hidden');
-      }
+      var shouldOpen = typeof forceState === 'boolean' ? forceState : chatWindow.classList.contains('hidden');
+      chatWindow.classList.toggle('hidden', !shouldOpen);
+      tiaToast.classList.toggle('visible', !shouldOpen);
     }
-
-    // Automatically pop up Tia shortly after anyone opens the site
-    window.addEventListener('DOMContentLoaded', function() {
-      setTimeout(function() {
-        toggleChat(true);
-      }, 450);
-    });
 
     var botData = {
       about: {
