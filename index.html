@@ -3,25 +3,22 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Saurabh Deep Rai | Technical Specialist &amp; Senior CCaaS Consultant</title>
-  <meta name="description" content="Portfolio of Saurabh Deep Rai — Technical Specialist at Zensar Technologies &amp; Senior Contact Center Consultant with 7+ years of experience in Genesys Cloud CX, Genesys Engage, Microsoft Dynamics 365 Contact Center, IVR, Omnichannel Routing, and Conversational AI.">
-  <meta name="keywords" content="Saurabh Deep Rai, Technical Specialist, Senior Contact Center Consultant, CCaaS, Genesys Cloud CX, PureCloud, Genesys PureEngage, Microsoft Dynamics 365 Contact Center, Microsoft Copilot Studio, Amazon Lex, Google Dialogflow, OpenAI, Genesys Architect, Genesys Data Actions, IVR, Omnichannel Routing, REST APIs, Salesforce CTI, Dataverse, AWS Lambda, Python, SQL, SIP">
+  <title>Saurabh Deep Rai | Technical Specialist · CCaaS &amp; Conversational AI</title>
+  <meta name="description" content="3D Interactive Portfolio of Saurabh Deep Rai — Technical Specialist at Zensar Technologies &amp; Senior Contact Center Consultant specializing in Genesys Cloud CX, Microsoft Dynamics 365 Contact Center, and Conversational AI.">
   <style>
     :root {
-      --bg-dark: #090d16;
-      --bg-surface: #0f1626;
-      --bg-card: #131c31;
-      --bg-card-hover: #192540;
+      --bg-deep: #060913;
+      --bg-surface: #0d1424;
+      --bg-card: rgba(18, 27, 48, 0.78);
       --accent: #38bdf8;
-      --accent-secondary: #6366f1;
-      --accent-glow: rgba(56, 189, 248, 0.14);
+      --accent-indigo: #6366f1;
+      --accent-glow: rgba(56, 189, 248, 0.22);
       --emerald: #34d399;
       --text-main: #f8fafc;
       --text-secondary: #cbd5e1;
       --text-muted: #94a3b8;
-      --border: #1e293b;
-      --border-light: #334155;
-      --shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.5);
+      --border: rgba(148, 163, 184, 0.16);
+      --border-highlight: rgba(56, 189, 248, 0.45);
     }
 
     * {
@@ -35,14 +32,41 @@
     }
 
     body {
-      background-color: var(--bg-dark);
-      background-image:
-        radial-gradient(circle at 15% 10%, rgba(56, 189, 248, 0.08), transparent 35%),
-        radial-gradient(circle at 85% 20%, rgba(99, 102, 241, 0.08), transparent 35%);
+      background-color: var(--bg-deep);
       color: var(--text-main);
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Inter', sans-serif;
-      line-height: 1.65;
-      padding-top: 80px;
+      line-height: 1.6;
+      padding-top: 76px;
+      overflow-x: hidden;
+      perspective: 1200px;
+    }
+
+    /* Simple 3D Ambient Background Perspective Grid & Floating Orbs */
+    .bg-3d-scene {
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      overflow: hidden;
+      pointer-events: none;
+      background:
+        radial-gradient(circle at 18% 15%, rgba(56, 189, 248, 0.12), transparent 38%),
+        radial-gradient(circle at 82% 25%, rgba(99, 102, 241, 0.12), transparent 40%),
+        radial-gradient(circle at 50% 85%, rgba(52, 211, 153, 0.07), transparent 45%);
+    }
+
+    .bg-grid-plane {
+      position: absolute;
+      bottom: -35%;
+      left: -25%;
+      width: 150%;
+      height: 85%;
+      background-image:
+        linear-gradient(to right, rgba(56, 189, 248, 0.07) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(56, 189, 248, 0.07) 1px, transparent 1px);
+      background-size: 56px 56px;
+      transform: perspective(650px) rotateX(68deg);
+      mask-image: linear-gradient(to top, rgba(0, 0, 0, 0.65), transparent 85%);
+      -webkit-mask-image: linear-gradient(to top, rgba(0, 0, 0, 0.65), transparent 85%);
     }
 
     a {
@@ -50,151 +74,196 @@
       text-decoration: none;
     }
 
-    /* Header / Navbar */
+    /* Header */
     .header {
       position: fixed;
       top: 0;
       left: 0;
       right: 0;
-      height: 78px;
-      background: rgba(9, 13, 22, 0.88);
-      backdrop-filter: blur(14px);
-      -webkit-backdrop-filter: blur(14px);
+      height: 74px;
+      background: rgba(6, 9, 19, 0.82);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
       border-bottom: 1px solid var(--border);
       display: flex;
       align-items: center;
       justify-content: space-between;
       padding: 0 5%;
-      z-index: 1000;
+      z-index: 900;
     }
 
     .logo-container {
       display: flex;
       align-items: center;
-      gap: 14px;
+      gap: 12px;
     }
 
-    .logo-icon {
+    .logo-cube {
       width: 42px;
       height: 42px;
-      background: linear-gradient(135deg, var(--accent), var(--accent-secondary));
-      color: #090d16;
+      background: linear-gradient(135deg, var(--accent), var(--accent-indigo));
+      color: #060913;
       font-weight: 800;
-      border-radius: 10px;
+      border-radius: 11px;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 1.05rem;
-      letter-spacing: 0.5px;
-      box-shadow: 0 4px 14px rgba(56, 189, 248, 0.3);
+      font-size: 1.02rem;
+      box-shadow:
+        0 6px 0 #1e3a8a,
+        0 10px 20px rgba(56, 189, 248, 0.35);
+      transform: translateY(-2px);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .logo-container:hover .logo-cube {
+      transform: translateY(-4px) rotateX(8deg) rotateY(-8deg);
+      box-shadow:
+        0 8px 0 #1e3a8a,
+        0 14px 26px rgba(56, 189, 248, 0.45);
     }
 
     .logo-text h1 {
-      font-size: 1.08rem;
+      font-size: 1.05rem;
       font-weight: 700;
-      letter-spacing: -0.2px;
     }
 
     .logo-text p {
-      font-size: 0.76rem;
+      font-size: 0.75rem;
       color: var(--text-muted);
     }
 
     .nav-links {
       display: flex;
-      gap: 28px;
+      gap: 26px;
       font-weight: 500;
-      font-size: 0.92rem;
+      font-size: 0.9rem;
       color: var(--text-secondary);
-    }
-
-    .nav-links a {
-      transition: color 0.2s ease;
     }
 
     .nav-links a:hover {
       color: var(--accent);
     }
 
-    .btn-primary {
+    /* 3D Tactile Buttons */
+    .btn-3d {
       display: inline-flex;
       align-items: center;
       gap: 8px;
       background: linear-gradient(135deg, var(--accent), #0ea5e9);
-      color: #090d16;
-      padding: 10px 22px;
-      border-radius: 8px;
+      color: #060913;
+      padding: 10px 20px;
+      border-radius: 10px;
       font-weight: 700;
-      font-size: 0.9rem;
-      transition: all 0.2s ease;
-      box-shadow: 0 4px 16px rgba(56, 189, 248, 0.22);
+      font-size: 0.88rem;
+      border: none;
+      cursor: pointer;
+      box-shadow:
+        0 4px 0 #0369a1,
+        0 8px 20px rgba(56, 189, 248, 0.28);
+      transform: translateY(0);
+      transition: all 0.18s ease;
     }
 
-    .btn-primary:hover {
+    .btn-3d:hover {
       transform: translateY(-2px);
-      box-shadow: 0 8px 24px rgba(56, 189, 248, 0.35);
+      box-shadow:
+        0 6px 0 #0369a1,
+        0 12px 26px rgba(56, 189, 248, 0.4);
     }
 
-    .btn-secondary {
+    .btn-3d:active {
+      transform: translateY(2px);
+      box-shadow:
+        0 2px 0 #0369a1,
+        0 4px 10px rgba(56, 189, 248, 0.25);
+    }
+
+    .btn-outline-3d {
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      background: rgba(19, 28, 49, 0.7);
-      border: 1px solid var(--border-light);
+      background: rgba(18, 27, 48, 0.75);
+      border: 1px solid var(--border);
       color: var(--text-main);
-      padding: 10px 20px;
-      border-radius: 8px;
+      padding: 10px 18px;
+      border-radius: 10px;
       font-weight: 600;
-      font-size: 0.9rem;
-      transition: all 0.2s ease;
+      font-size: 0.88rem;
+      box-shadow: 0 4px 0 rgba(15, 23, 42, 0.9);
+      transition: all 0.18s ease;
     }
 
-    .btn-secondary:hover {
+    .btn-outline-3d:hover {
       border-color: var(--accent);
       color: var(--accent);
       transform: translateY(-2px);
+      box-shadow:
+        0 6px 0 rgba(15, 23, 42, 0.95),
+        0 10px 20px rgba(56, 189, 248, 0.15);
     }
 
     /* Layout Container */
     section {
-      padding: 72px 5%;
-      max-width: 1220px;
+      padding: 56px 5%;
+      max-width: 1140px;
       margin: 0 auto;
     }
 
     .section-tag {
       color: var(--accent);
       font-weight: 700;
-      font-size: 0.8rem;
-      letter-spacing: 1.8px;
+      font-size: 0.78rem;
+      letter-spacing: 1.6px;
       text-transform: uppercase;
-      margin-bottom: 8px;
+      margin-bottom: 6px;
     }
 
     .section-title {
-      font-size: 2.15rem;
+      font-size: 1.95rem;
       font-weight: 800;
-      letter-spacing: -0.5px;
-      margin-bottom: 14px;
+      letter-spacing: -0.4px;
+      margin-bottom: 24px;
     }
 
-    .section-subtitle {
-      color: var(--text-muted);
-      font-size: 1rem;
-      max-width: 740px;
-      margin-bottom: 36px;
+    /* 3D Interactive Cards */
+    .card-3d {
+      position: relative;
+      background: var(--bg-card);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid var(--border);
+      border-top: 1px solid rgba(255, 255, 255, 0.14);
+      border-radius: 16px;
+      padding: 26px;
+      transform-style: preserve-3d;
+      box-shadow:
+        0 10px 0 -2px rgba(9, 14, 28, 0.9),
+        0 20px 38px -12px rgba(0, 0, 0, 0.65);
+      transition: transform 0.25s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .card-3d:hover {
+      border-color: var(--border-highlight);
+      box-shadow:
+        0 14px 0 -2px rgba(14, 23, 45, 0.95),
+        0 26px 48px -12px rgba(56, 189, 248, 0.22);
+    }
+
+    .card-3d-inner {
+      transform: translateZ(20px);
     }
 
     /* Hero Section */
     .hero {
-      padding-top: 56px;
-      padding-bottom: 48px;
+      padding-top: 44px;
+      padding-bottom: 32px;
     }
 
     .hero-grid {
       display: grid;
       grid-template-columns: 1.3fr 0.7fr;
-      gap: 40px;
+      gap: 32px;
       align-items: center;
     }
 
@@ -202,14 +271,14 @@
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      background: var(--accent-glow);
+      background: rgba(56, 189, 248, 0.12);
       color: var(--accent);
       border: 1px solid rgba(56, 189, 248, 0.35);
-      padding: 6px 15px;
+      padding: 6px 14px;
       border-radius: 999px;
-      font-size: 0.82rem;
+      font-size: 0.8rem;
       font-weight: 600;
-      margin-bottom: 20px;
+      margin-bottom: 16px;
     }
 
     .status-dot {
@@ -221,11 +290,11 @@
     }
 
     .hero-title {
-      font-size: 2.85rem;
+      font-size: 2.55rem;
       font-weight: 800;
-      line-height: 1.15;
-      letter-spacing: -0.8px;
-      margin-bottom: 20px;
+      line-height: 1.16;
+      letter-spacing: -0.7px;
+      margin-bottom: 16px;
     }
 
     .hero-title span {
@@ -236,156 +305,138 @@
 
     .hero-sub {
       color: var(--text-secondary);
-      font-size: 1.05rem;
-      margin-bottom: 28px;
+      font-size: 1rem;
+      margin-bottom: 24px;
     }
 
     .hero-actions {
       display: flex;
-      gap: 14px;
+      gap: 12px;
       flex-wrap: wrap;
     }
 
-    /* Profile Card */
+    /* 3D Profile Card */
     .profile-card {
-      background: linear-gradient(180deg, var(--bg-card) 0%, var(--bg-surface) 100%);
-      border: 1px solid var(--border-light);
-      border-radius: 16px;
-      padding: 32px 26px;
       text-align: center;
-      box-shadow: var(--shadow);
+      padding: 30px 24px;
     }
 
-    .avatar-ring {
-      width: 88px;
-      height: 88px;
-      margin: 0 auto 16px auto;
-      border-radius: 50%;
-      background: linear-gradient(135deg, var(--accent), var(--accent-secondary));
+    .avatar-3d {
+      width: 82px;
+      height: 82px;
+      margin: 0 auto 14px auto;
+      border-radius: 22px;
+      background: linear-gradient(135deg, var(--accent), var(--accent-indigo));
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 1.85rem;
+      font-size: 1.7rem;
       font-weight: 800;
-      color: #090d16;
-      box-shadow: 0 8px 25px rgba(56, 189, 248, 0.25);
+      color: #060913;
+      box-shadow:
+        0 8px 0 #1e3a8a,
+        0 16px 28px rgba(56, 189, 248, 0.32);
+      transform: translateZ(30px);
     }
 
     .profile-card h2 {
-      font-size: 1.4rem;
+      font-size: 1.35rem;
       font-weight: 800;
       margin-bottom: 4px;
     }
 
     .profile-role {
       color: var(--accent);
-      font-weight: 600;
-      font-size: 0.95rem;
-      margin-bottom: 4px;
+      font-weight: 700;
+      font-size: 0.92rem;
+      margin-bottom: 2px;
     }
 
     .profile-company {
       color: var(--text-muted);
-      font-size: 0.85rem;
-      margin-bottom: 18px;
+      font-size: 0.84rem;
+      margin-bottom: 16px;
     }
 
     .pill-group {
       display: flex;
       flex-wrap: wrap;
-      gap: 8px;
+      gap: 7px;
       justify-content: center;
-      margin-bottom: 20px;
+      margin-bottom: 16px;
     }
 
     .pill {
       background: rgba(255, 255, 255, 0.05);
-      border: 1px solid var(--border-light);
+      border: 1px solid var(--border);
       color: var(--text-secondary);
-      font-size: 0.76rem;
+      font-size: 0.74rem;
       font-weight: 600;
-      padding: 4px 11px;
+      padding: 4px 10px;
       border-radius: 999px;
     }
 
-    .availability-banner {
+    .cert-badge {
       display: inline-flex;
       align-items: center;
-      gap: 8px;
+      gap: 7px;
       background: rgba(52, 211, 153, 0.1);
       border: 1px solid rgba(52, 211, 153, 0.35);
       color: var(--emerald);
-      font-size: 0.78rem;
+      font-size: 0.76rem;
       font-weight: 600;
-      padding: 6px 14px;
+      padding: 5px 13px;
       border-radius: 999px;
     }
 
-    /* Stats Banner */
+    /* 3D Stats Strip */
     .stats-bar {
-      max-width: 1220px;
+      max-width: 1140px;
       margin: 0 auto;
-      padding: 0 5%;
+      padding: 8px 5% 24px 5%;
     }
 
     .stats-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 20px;
-      background: var(--bg-surface);
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 28px 32px;
+      gap: 16px;
     }
 
-    .stat-item {
+    .stat-card {
       text-align: center;
+      padding: 20px 14px;
     }
 
     .stat-number {
-      font-size: 2.1rem;
+      font-size: 1.9rem;
       font-weight: 800;
       color: var(--accent);
       line-height: 1.1;
-      margin-bottom: 6px;
+      margin-bottom: 4px;
     }
 
     .stat-label {
       color: var(--text-muted);
-      font-size: 0.85rem;
+      font-size: 0.82rem;
       font-weight: 500;
     }
 
-    /* Cards & Grids */
-    .card {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 28px;
-      transition: all 0.22s ease;
-    }
-
-    .card:hover {
-      background: var(--bg-card-hover);
-      border-color: var(--border-light);
-      transform: translateY(-3px);
-    }
-
+    /* Grids */
     .grid-2 {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 24px;
+      gap: 22px;
     }
 
     .grid-3 {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
+      gap: 22px;
     }
 
-    /* Skills */
+    /* Skills (Single Clean 3-Card Row) */
     .skill-card h3 {
-      font-size: 1.08rem;
+      font-size: 1.05rem;
       font-weight: 700;
       margin-bottom: 12px;
       color: var(--accent);
@@ -398,48 +449,47 @@
     }
 
     .skill-tag {
-      background: rgba(15, 22, 38, 0.85);
-      border: 1px solid var(--border-light);
+      background: rgba(10, 15, 29, 0.85);
+      border: 1px solid var(--border);
       color: var(--text-secondary);
-      font-size: 0.78rem;
+      font-size: 0.77rem;
       font-weight: 500;
       padding: 4px 10px;
-      border-radius: 6px;
+      border-radius: 7px;
     }
 
-    /* Projects / Key Achievements */
+    /* Selected Work (Single Clean 2-Card Row) */
     .project-metric {
       display: inline-block;
-      background: var(--accent-glow);
+      background: rgba(56, 189, 248, 0.14);
+      border: 1px solid rgba(56, 189, 248, 0.3);
       color: var(--accent);
-      font-size: 0.76rem;
+      font-size: 0.75rem;
       font-weight: 700;
       padding: 4px 10px;
       border-radius: 6px;
-      margin-bottom: 12px;
+      margin-bottom: 10px;
     }
 
     .project-card h3 {
-      font-size: 1.15rem;
+      font-size: 1.12rem;
       font-weight: 700;
-      margin-bottom: 10px;
+      margin-bottom: 8px;
     }
 
     .project-card p {
       color: var(--text-muted);
-      font-size: 0.92rem;
-      margin-bottom: 16px;
+      font-size: 0.9rem;
     }
 
     /* Experience Timeline */
     .timeline {
       display: flex;
       flex-direction: column;
-      gap: 24px;
+      gap: 20px;
     }
 
     .timeline-item {
-      position: relative;
       border-left: 3px solid var(--accent);
     }
 
@@ -453,37 +503,37 @@
     }
 
     .role-title {
-      font-size: 1.25rem;
+      font-size: 1.18rem;
       font-weight: 800;
       color: var(--text-main);
     }
 
     .role-date {
-      background: var(--accent-glow);
+      background: rgba(56, 189, 248, 0.12);
       border: 1px solid rgba(56, 189, 248, 0.3);
       color: var(--accent);
-      font-size: 0.82rem;
+      font-size: 0.78rem;
       font-weight: 700;
-      padding: 3px 12px;
+      padding: 3px 11px;
       border-radius: 999px;
     }
 
     .role-company {
       color: var(--text-secondary);
-      font-size: 0.96rem;
+      font-size: 0.92rem;
       font-weight: 600;
-      margin-bottom: 14px;
+      margin-bottom: 12px;
     }
 
     .role-bullets {
       list-style-type: disc;
-      padding-left: 20px;
+      padding-left: 18px;
       color: var(--text-muted);
-      font-size: 0.93rem;
+      font-size: 0.9rem;
     }
 
     .role-bullets li {
-      margin-bottom: 8px;
+      margin-bottom: 6px;
     }
 
     .role-bullets strong {
@@ -494,20 +544,267 @@
     /* Contact & Footer */
     .contact-box {
       text-align: center;
-      padding: 52px 28px;
-      background: linear-gradient(135deg, var(--bg-card) 0%, #16203a 100%);
-      border: 1px solid var(--border-light);
+      padding: 40px 24px;
     }
 
     .footer {
       border-top: 1px solid var(--border);
       text-align: center;
-      padding: 36px 5%;
+      padding: 28px 5%;
       color: var(--text-muted);
-      font-size: 0.85rem;
+      font-size: 0.83rem;
     }
 
-    @media (max-width: 960px) {
+    /* ==================== 3D INTERACTIVE CHATBOT WIDGET ==================== */
+    .chatbot-launcher {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      z-index: 2000;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: linear-gradient(135deg, var(--accent), var(--accent-indigo));
+      color: #060913;
+      border: none;
+      border-radius: 999px;
+      padding: 13px 20px;
+      font-weight: 800;
+      font-size: 0.9rem;
+      cursor: pointer;
+      box-shadow:
+        0 6px 0 #1e3a8a,
+        0 14px 30px rgba(56, 189, 248, 0.45);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .chatbot-launcher:hover {
+      transform: translateY(-3px) scale(1.02);
+      box-shadow:
+        0 8px 0 #1e3a8a,
+        0 18px 36px rgba(56, 189, 248, 0.55);
+    }
+
+    .chatbot-window {
+      position: fixed;
+      bottom: 92px;
+      right: 24px;
+      width: 370px;
+      max-width: calc(100vw - 32px);
+      height: 520px;
+      max-height: calc(100vh - 120px);
+      background: rgba(11, 17, 32, 0.96);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid var(--border-highlight);
+      border-radius: 20px;
+      box-shadow:
+        0 14px 0 -3px rgba(6, 10, 22, 0.98),
+        0 28px 60px rgba(0, 0, 0, 0.78);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      z-index: 2000;
+      transform-origin: bottom right;
+      transition: opacity 0.25s ease, transform 0.25s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .chatbot-window.hidden {
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(16px) scale(0.92);
+    }
+
+    .chat-header {
+      background: linear-gradient(135deg, rgba(56, 189, 248, 0.18), rgba(99, 102, 241, 0.18));
+      border-bottom: 1px solid var(--border);
+      padding: 14px 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .chat-header-info {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .chat-bot-avatar {
+      width: 34px;
+      height: 34px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, var(--accent), var(--accent-indigo));
+      color: #060913;
+      font-weight: 800;
+      font-size: 0.85rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 3px 0 #1e3a8a;
+    }
+
+    .chat-header-text h4 {
+      font-size: 0.92rem;
+      font-weight: 700;
+      line-height: 1.2;
+    }
+
+    .chat-header-text span {
+      font-size: 0.72rem;
+      color: var(--emerald);
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .chat-close {
+      background: transparent;
+      border: none;
+      color: var(--text-muted);
+      font-size: 1.2rem;
+      cursor: pointer;
+      padding: 4px 8px;
+      border-radius: 6px;
+    }
+
+    .chat-close:hover {
+      color: var(--text-main);
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    .chat-messages {
+      flex: 1;
+      padding: 14px 16px;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .msg {
+      max-width: 88%;
+      padding: 10px 13px;
+      border-radius: 13px;
+      font-size: 0.84rem;
+      line-height: 1.48;
+      word-wrap: break-word;
+    }
+
+    .msg-bot {
+      align-self: flex-start;
+      background: rgba(25, 37, 64, 0.92);
+      border: 1px solid var(--border);
+      color: var(--text-main);
+      border-bottom-left-radius: 4px;
+    }
+
+    .msg-user {
+      align-self: flex-end;
+      background: linear-gradient(135deg, var(--accent), #0284c7);
+      color: #060913;
+      font-weight: 600;
+      border-bottom-right-radius: 4px;
+    }
+
+    .msg-bot strong {
+      color: var(--accent);
+    }
+
+    .msg-jump-btn {
+      display: inline-block;
+      margin-top: 7px;
+      padding: 4px 10px;
+      background: rgba(56, 189, 248, 0.15);
+      border: 1px solid rgba(56, 189, 248, 0.4);
+      color: var(--accent);
+      border-radius: 6px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .msg-jump-btn:hover {
+      background: rgba(56, 189, 248, 0.28);
+    }
+
+    /* Ever-Present Quick Options Tray */
+    .chat-options-tray {
+      padding: 10px 12px;
+      border-top: 1px solid var(--border);
+      background: rgba(13, 20, 36, 0.95);
+    }
+
+    .chat-options-label {
+      font-size: 0.68rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--text-muted);
+      margin-bottom: 6px;
+      font-weight: 700;
+    }
+
+    .chat-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .chat-chip {
+      background: rgba(30, 41, 59, 0.9);
+      border: 1px solid rgba(56, 189, 248, 0.32);
+      color: var(--text-secondary);
+      padding: 5px 10px;
+      border-radius: 999px;
+      font-size: 0.74rem;
+      font-weight: 600;
+      cursor: pointer;
+      box-shadow: 0 2px 0 rgba(6, 9, 19, 0.9);
+      transition: all 0.15s ease;
+    }
+
+    .chat-chip:hover {
+      background: var(--accent);
+      color: #060913;
+      border-color: var(--accent);
+      transform: translateY(-1px);
+    }
+
+    .chat-input-bar {
+      display: flex;
+      border-top: 1px solid var(--border);
+      padding: 8px 10px;
+      gap: 8px;
+      background: rgba(6, 9, 19, 0.95);
+    }
+
+    .chat-input-bar input {
+      flex: 1;
+      background: rgba(19, 28, 49, 0.9);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 8px 11px;
+      color: var(--text-main);
+      font-size: 0.82rem;
+      outline: none;
+    }
+
+    .chat-input-bar input:focus {
+      border-color: var(--accent);
+    }
+
+    .chat-send-btn {
+      background: var(--accent);
+      color: #060913;
+      border: none;
+      border-radius: 8px;
+      padding: 0 14px;
+      font-weight: 700;
+      font-size: 0.82rem;
+      cursor: pointer;
+    }
+
+    @media (max-width: 920px) {
       .hero-grid, .grid-2, .grid-3 {
         grid-template-columns: 1fr;
       }
@@ -518,31 +815,36 @@
         display: none;
       }
       .hero-title {
-        font-size: 2.2rem;
+        font-size: 2.05rem;
       }
     }
   </style>
 </head>
 <body>
 
+  <!-- 3D Ambient Background -->
+  <div class="bg-3d-scene">
+    <div class="bg-grid-plane"></div>
+  </div>
+
   <!-- Header -->
   <header class="header">
     <div class="logo-container">
-      <div class="logo-icon">SD</div>
+      <div class="logo-cube">SD</div>
       <div class="logo-text">
         <h1>Saurabh Deep Rai</h1>
-        <p>Technical Specialist · CCaaS &amp; Conversational AI</p>
+        <p>Technical Specialist · CCaaS &amp; AI</p>
       </div>
     </div>
     <nav class="nav-links">
       <a href="#about">About</a>
-      <a href="#skills">Skills</a>
+      <a href="#skills">CCaaS &amp; Skills</a>
       <a href="#projects">Projects</a>
       <a href="#experience">Experience</a>
       <a href="#education">Credentials</a>
       <a href="#contact">Contact</a>
     </nav>
-    <a href="mailto:sdfrmgkp09@gmail.com" class="btn-primary">Contact Me</a>
+    <button class="btn-3d" onclick="toggleChat(true)">Ask AI Bot</button>
   </header>
 
   <main>
@@ -552,58 +854,59 @@
         <div>
           <div class="hero-badge">
             <span class="status-dot"></span>
-            Technical Specialist | CCaaS | IVR | Conversational AI &amp; GenAI
+            Technical Specialist | CCaaS | IVR | Conversational AI
           </div>
           <h1 class="hero-title">
-            Architecting intelligent, scalable <span>Enterprise Contact Center</span> ecosystems.
+            Architecting intelligent <span>3D-grade Enterprise Contact Center</span> ecosystems.
           </h1>
           <p class="hero-sub">
-            I am <strong>Saurabh Deep Rai</strong>, a <strong>Technical Specialist at Zensar Technologies</strong> and Senior Contact Center Consultant with <strong>7+ years of experience</strong> across <strong>Genesys Cloud CX (PureCloud)</strong>, <strong>Genesys Engage (PureEngage)</strong>, and <strong>Microsoft Dynamics 365 Contact Center</strong>—specializing in IVR architecture, omnichannel routing, CRM/API orchestration, and AI virtual agents.
+            I am <strong>Saurabh Deep Rai</strong>, a <strong>Technical Specialist at Zensar Technologies</strong> and Senior Contact Center Consultant with <strong>7+ years of experience</strong> across <strong>Genesys Cloud CX</strong>, <strong>Genesys Engage</strong>, and <strong>Microsoft Dynamics 365 Contact Center</strong>.
           </p>
           <div class="hero-actions">
-            <a href="#experience" class="btn-primary">View Experience</a>
-            <a href="mailto:sdfrmgkp09@gmail.com" class="btn-secondary">sdfrmgkp09@gmail.com</a>
-            <a href="tel:+917518333121" class="btn-secondary">+91-7518333121</a>
+            <a href="#experience" class="btn-3d">View Experience</a>
+            <button class="btn-outline-3d" onclick="toggleChat(true)">Launch Portfolio Chatbot</button>
+            <a href="mailto:sdfrmgkp09@gmail.com" class="btn-outline-3d">Email Me</a>
           </div>
         </div>
 
-        <div class="profile-card">
-          <div class="avatar-ring">SR</div>
-          <h2>Saurabh Deep Rai</h2>
-          <div class="profile-role">Technical Specialist</div>
-          <div class="profile-company">Zensar Technologies · Gurgaon, India</div>
-          <div class="pill-group">
-            <span class="pill">Genesys Cloud CX</span>
-            <span class="pill">Dynamics 365 Contact Center</span>
-            <span class="pill">Copilot Studio</span>
-            <span class="pill">Amazon Lex</span>
-            <span class="pill">Dialogflow</span>
-            <span class="pill">Genesys Data Actions</span>
-          </div>
-          <div class="availability-banner">
-            <span class="status-dot"></span>
-            Genesys Cloud CX Certified Partner
+        <div class="card-3d profile-card tilt-card">
+          <div class="card-3d-inner">
+            <div class="avatar-3d">SR</div>
+            <h2>Saurabh Deep Rai</h2>
+            <div class="profile-role">Technical Specialist</div>
+            <div class="profile-company">Zensar Technologies · Gurgaon, India</div>
+            <div class="pill-group">
+              <span class="pill">Genesys Cloud CX</span>
+              <span class="pill">Dynamics 365 CC</span>
+              <span class="pill">Copilot Studio</span>
+              <span class="pill">Amazon Lex</span>
+              <span class="pill">Dialogflow</span>
+            </div>
+            <div class="cert-badge">
+              <span class="status-dot"></span>
+              Genesys Cloud CX Certified Partner
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Highlights & Stats Banner -->
+    <!-- 3D Highlights & Stats Bar -->
     <div class="stats-bar">
       <div class="stats-grid">
-        <div class="stat-item">
+        <div class="card-3d stat-card tilt-card">
           <div class="stat-number">7+</div>
-          <div class="stat-label">Years in CCaaS &amp; Telephony</div>
+          <div class="stat-label">Years in CCaaS &amp; AI</div>
         </div>
-        <div class="stat-item">
+        <div class="card-3d stat-card tilt-card">
           <div class="stat-number">15–20%</div>
           <div class="stat-label">Self-Service Containment Lift</div>
         </div>
-        <div class="stat-item">
+        <div class="card-3d stat-card tilt-card">
           <div class="stat-number">10–15%</div>
           <div class="stat-label">AI Voicebot Call Deflection</div>
         </div>
-        <div class="stat-item">
+        <div class="card-3d stat-card tilt-card">
           <div class="stat-number">2x</div>
           <div class="stat-label">Infosys Insta Award Winner</div>
         </div>
@@ -612,22 +915,21 @@
 
     <!-- About Section -->
     <section id="about">
-      <div class="section-tag">ABOUT PROFILE</div>
-      <h2 class="section-title">Contact center specialist focused on architecture, AI automation, and measurable CX impact.</h2>
-      <div class="card">
-        <p style="color: var(--text-secondary); font-size: 1.02rem; line-height: 1.8;">
-          Results-driven <strong>Technical Specialist</strong> and <strong>Senior Contact Center Consultant</strong> with 7+ years of hands-on experience designing, implementing, migrating, and optimizing enterprise customer engagement platforms. I specialize in end-to-end <strong>Genesys Cloud CX (PureCloud)</strong>, <strong>Genesys Engage (PureEngage)</strong>, and <strong>Microsoft Dynamics 365 Contact Center</strong> deployments, combining precision <strong>ACD/skills-based routing</strong> and <strong>Genesys Architect IVR</strong> workflows with conversational AI virtual agents built on <strong>Microsoft Copilot Studio</strong>, <strong>Amazon Lex</strong>, <strong>Google Cloud Dialogflow</strong>, and <strong>OpenAI</strong>. My focus is building resilient, API-driven contact center architectures that elevate First Contact Resolution (FCR), boost self-service containment, and reduce Average Handle Time (AHT).
+      <div class="section-tag">ABOUT</div>
+      <h2 class="section-title">Simple, scalable contact center architecture &amp; AI automation.</h2>
+      <div class="card-3d tilt-card">
+        <p style="color: var(--text-secondary); font-size: 0.98rem; line-height: 1.75;">
+          Results-driven <strong>Technical Specialist</strong> and <strong>Senior Contact Center Consultant</strong> with 7+ years of experience designing, migrating, and optimizing enterprise customer engagement platforms. I specialize in end-to-end <strong>Genesys Cloud CX (PureCloud)</strong>, <strong>Genesys Engage (PureEngage)</strong>, and <strong>Microsoft Dynamics 365 Contact Center</strong> solutions—combining precision <strong>Genesys Architect IVR</strong> call flows and omnichannel routing with AI-powered self-service <strong>Voicebots and Chatbots</strong> using <strong>Microsoft Copilot Studio</strong>, <strong>Amazon Lex</strong>, <strong>Google Cloud Dialogflow</strong>, and <strong>OpenAI</strong>.
         </p>
       </div>
     </section>
 
-    <!-- Technical Skills Section -->
+    <!-- Technical Skills Section (Clean Single 3-Card Row — extra bottom row removed as requested) -->
     <section id="skills">
       <div class="section-tag">CORE COMPETENCIES</div>
-      <h2 class="section-title">Technical Skills &amp; Ecosystem Stack</h2>
-      <p class="section-subtitle">Enterprise-grade capabilities across cloud contact center platforms, conversational AI, CRM middleware, and SIP telephony operations.</p>
+      <h2 class="section-title">CCaaS &amp; Conversational AI Skills</h2>
       <div class="grid-3">
-        <div class="card skill-card">
+        <div class="card-3d skill-card tilt-card">
           <h3>CCaaS &amp; Contact Center Platforms</h3>
           <div class="skill-tags">
             <span class="skill-tag">Genesys Cloud CX (PureCloud)</span>
@@ -636,117 +938,56 @@
             <span class="skill-tag">Omnichannel Routing</span>
             <span class="skill-tag">ACD &amp; Precision Queues</span>
             <span class="skill-tag">Skills-Based Routing</span>
-            <span class="skill-tag">Callback Management</span>
-            <span class="skill-tag">WebRTC</span>
-            <span class="skill-tag">WEM</span>
+            <span class="skill-tag">WebRTC &amp; SIP</span>
           </div>
         </div>
 
-        <div class="card skill-card">
-          <h3>Conversational AI, GenAI &amp; Automation</h3>
+        <div class="card-3d skill-card tilt-card">
+          <h3>Conversational AI, GenAI &amp; Bots</h3>
           <div class="skill-tags">
             <span class="skill-tag">Microsoft Copilot Studio</span>
             <span class="skill-tag">Amazon Lex</span>
             <span class="skill-tag">Google Dialogflow (ES/CX)</span>
-            <span class="skill-tag">Power Virtual Agents</span>
-            <span class="skill-tag">Power Automate</span>
             <span class="skill-tag">OpenAI / LLM Integration</span>
-            <span class="skill-tag">n8n Automation</span>
+            <span class="skill-tag">Power Automate &amp; n8n</span>
             <span class="skill-tag">NLU Intent &amp; Slot Design</span>
             <span class="skill-tag">Voicebots &amp; Chatbots</span>
           </div>
         </div>
 
-        <div class="card skill-card">
-          <h3>Genesys Administration &amp; Tooling</h3>
+        <div class="card-3d skill-card tilt-card">
+          <h3>Genesys Tooling, CRM &amp; Cloud APIs</h3>
           <div class="skill-tags">
             <span class="skill-tag">Genesys Architect</span>
             <span class="skill-tag">Genesys Data Actions</span>
-            <span class="skill-tag">Interactive &amp; Bullseye Routing</span>
-            <span class="skill-tag">CCPulse &amp; Hyperion</span>
-            <span class="skill-tag">GAX, CME &amp; SCI</span>
-            <span class="skill-tag">Pulse Analytics</span>
-            <span class="skill-tag">RBAC &amp; Divisions</span>
-            <span class="skill-tag">License Optimization</span>
-          </div>
-        </div>
-
-        <div class="card skill-card">
-          <h3>CRM Integration, Middleware &amp; APIs</h3>
-          <div class="skill-tags">
-            <span class="skill-tag">Salesforce Service Cloud (CTI)</span>
-            <span class="skill-tag">Microsoft Dynamics 365</span>
-            <span class="skill-tag">Microsoft Dataverse</span>
-            <span class="skill-tag">RESTful APIs</span>
-            <span class="skill-tag">JSON &amp; OAuth 2.0</span>
-            <span class="skill-tag">Webhooks</span>
-            <span class="skill-tag">Postman</span>
-          </div>
-        </div>
-
-        <div class="card skill-card">
-          <h3>Cloud Infrastructure, DevOps &amp; Code</h3>
-          <div class="skill-tags">
-            <span class="skill-tag">AWS Lambda</span>
-            <span class="skill-tag">AWS S3 &amp; CloudWatch</span>
-            <span class="skill-tag">API Gateway &amp; IAM</span>
-            <span class="skill-tag">Python</span>
-            <span class="skill-tag">SQL</span>
-            <span class="skill-tag">Terraform (IaC)</span>
-            <span class="skill-tag">CI/CD Pipelines</span>
-          </div>
-        </div>
-
-        <div class="card skill-card">
-          <h3>Telephony, Operations &amp; Governance</h3>
-          <div class="skill-tags">
-            <span class="skill-tag">SIP Trunking &amp; Protocol</span>
-            <span class="skill-tag">Session Border Controller (SBC)</span>
-            <span class="skill-tag">Sangoma Media Gateway</span>
-            <span class="skill-tag">SIP Tracing &amp; Log Analysis</span>
-            <span class="skill-tag">Root Cause Analysis (RCA)</span>
-            <span class="skill-tag">ITIL Incident &amp; Change Mgmt</span>
-            <span class="skill-tag">UAT &amp; Cutover</span>
-            <span class="skill-tag">FCR / AHT / CSAT</span>
+            <span class="skill-tag">Salesforce CTI &amp; Dataverse</span>
+            <span class="skill-tag">REST APIs &amp; OAuth 2.0</span>
+            <span class="skill-tag">AWS Lambda &amp; CloudWatch</span>
+            <span class="skill-tag">CCPulse, Hyperion &amp; GAX</span>
+            <span class="skill-tag">Python &amp; SQL</span>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Selected Work / Projects Section -->
+    <!-- Selected Work Section (Clean Single 2-Card Row — extra bottom row removed as requested) -->
     <section id="projects">
-      <div class="section-tag">SELECTED WORK &amp; IMPACT</div>
-      <h2 class="section-title">Key Achievements &amp; Project Highlights</h2>
+      <div class="section-tag">SELECTED WORK</div>
+      <h2 class="section-title">Key Impact &amp; Achievements</h2>
       <div class="grid-2">
-        <div class="card project-card">
+        <div class="card-3d project-card tilt-card">
           <span class="project-metric">10–15% Call Deflection</span>
           <h3>AI-Powered Virtual Agent &amp; GenAI Integration</h3>
           <p>
-            Designed and deployed conversational voice and chat virtual agents using <strong>Amazon Lex</strong> and <strong>Microsoft Copilot Studio</strong> integrated with <strong>Genesys Cloud CX</strong> and <strong>OpenAI</strong>, automating tier-1 inquiries and seamlessly escalating complex intents with full context.
+            Designed and deployed conversational voice and chat virtual agents using <strong>Amazon Lex</strong> and <strong>Microsoft Copilot Studio</strong> integrated with <strong>Genesys Cloud CX</strong> and <strong>OpenAI</strong> to automate tier-1 inquiries with seamless agent handoff.
           </p>
         </div>
 
-        <div class="card project-card">
+        <div class="card-3d project-card tilt-card">
           <span class="project-metric">15–20% Containment Improvement</span>
           <h3>Self-Service Containment &amp; Dynamic IVR Redesign</h3>
           <p>
-            Re-architected multi-tier <strong>Genesys Architect</strong> IVR call flows with streamlined DTMF menus, NLU intent recognition, and automated callback orchestration to cut caller drop-offs and queue wait times.
-          </p>
-        </div>
-
-        <div class="card project-card">
-          <span class="project-metric">Real-Time 360° Agent Context</span>
-          <h3>Intelligent API &amp; Multi-CRM Orchestration Framework</h3>
-          <p>
-            Engineered modular <strong>Genesys Data Actions</strong>, <strong>AWS Lambda</strong> functions, and <strong>RESTful API</strong> connectors bridging CCaaS platforms with <strong>Salesforce Service Cloud (CTI)</strong>, <strong>Dynamics 365</strong>, and <strong>Dataverse</strong> for instant caller verification and personalized routing.
-          </p>
-        </div>
-
-        <div class="card project-card">
-          <span class="project-metric">High-Availability Operations</span>
-          <h3>Omnichannel Migration &amp; Production Reliability</h3>
-          <p>
-            Led legacy-to-cloud CCaaS migrations and established proactive monitoring, SIP trace diagnostics, RCA governance, and zero-downtime CI/CD release validation across voice, chat, email, and digital messaging channels.
+            Re-architected multi-tier <strong>Genesys Architect</strong> IVR call flows with optimized DTMF menus, real-time <strong>Genesys Data Actions</strong> CRM lookups, and automated callback orchestration to reduce queue wait times.
           </p>
         </div>
       </div>
@@ -759,74 +1000,63 @@
       <div class="timeline">
 
         <!-- Zensar Technologies -->
-        <div class="card timeline-item">
+        <div class="card-3d timeline-item tilt-card">
           <div class="role-header">
             <span class="role-title">Technical Specialist</span>
             <span class="role-date">Aug 2026 – Present</span>
           </div>
           <div class="role-company">Zensar Technologies · Gurgaon, India</div>
           <ul class="role-bullets">
-            <li>Lead the end-to-end architecture, configuration, and rollout of enterprise <strong>Genesys Cloud CX</strong> and <strong>Microsoft Dynamics 365 Contact Center</strong> solutions tailored to complex multi-region client operations.</li>
-            <li>Design and deploy AI-powered conversational <strong>Voicebots and Chatbots</strong> using <strong>Microsoft Copilot Studio</strong>, <strong>Amazon Lex</strong>, and <strong>Google Dialogflow</strong>, automating high-volume customer inquiries and improving self-service containment.</li>
-            <li>Engineer custom <strong>Genesys Architect</strong> call flows, dynamic <strong>DTMF</strong> menus, precision queue routing, and omnichannel workflows across voice, live chat, email, and digital messaging channels.</li>
-            <li>Build and maintain secure <strong>Genesys Data Actions</strong>, <strong>RESTful API</strong> connectors, and <strong>Power Automate</strong> workflows integrating CCaaS platforms with <strong>Microsoft Dataverse</strong>, <strong>Salesforce CTI</strong>, and core enterprise databases for real-time screen-pop and self-service personalization.</li>
-            <li>Spearhead high-priority telephony and platform troubleshooting across <strong>SIP trunks</strong>, routing logic, API timeouts, and WebRTC endpoints, conducting deep log and trace analysis to maintain high system availability.</li>
-            <li>Partner with product owners, enterprise architects, QA leads, and DevOps teams to drive requirement discovery, <strong>CI/CD</strong> release validation, <strong>UAT sign-off</strong>, and production hypercare support.</li>
+            <li>Lead end-to-end architecture, configuration, and rollout of enterprise <strong>Genesys Cloud CX</strong> and <strong>Microsoft Dynamics 365 Contact Center</strong> solutions.</li>
+            <li>Design and deploy AI-powered conversational <strong>Voicebots and Chatbots</strong> using <strong>Microsoft Copilot Studio</strong>, <strong>Amazon Lex</strong>, and <strong>Google Dialogflow</strong>.</li>
+            <li>Engineer custom <strong>Genesys Architect</strong> call flows, dynamic <strong>DTMF</strong> menus, precision queue routing, and omnichannel workflows across voice, chat, email, and digital messaging.</li>
+            <li>Build secure <strong>Genesys Data Actions</strong>, <strong>RESTful API</strong> connectors, and <strong>Power Automate</strong> workflows integrating with <strong>Microsoft Dataverse</strong> and <strong>Salesforce CTI</strong>.</li>
+            <li>Spearhead high-priority telephony and platform troubleshooting across <strong>SIP trunks</strong>, routing logic, API timeouts, and WebRTC endpoints.</li>
           </ul>
         </div>
 
         <!-- Deloitte India -->
-        <div class="card timeline-item">
+        <div class="card-3d timeline-item tilt-card">
           <div class="role-header">
             <span class="role-title">Senior Consultant</span>
             <span class="role-date">Dec 2025 – Aug 2026</span>
           </div>
           <div class="role-company">Deloitte India · Gurgaon, India</div>
           <ul class="role-bullets">
-            <li>Configured and implemented scalable <strong>Genesys Cloud CX (PureCloud)</strong> and <strong>Microsoft Dynamics 365 Contact Center</strong> environments aligned with enterprise customer engagement and compliance standards.</li>
-            <li>Architected and optimized <strong>IVR call flows</strong>, <strong>ACD queue routing</strong>, <strong>DTMF self-service menus</strong>, and skills-based routing strategies in <strong>Genesys Architect</strong> to streamline caller journeys and reduce queue wait times.</li>
-            <li>Developed and maintained <strong>Genesys Data Actions</strong> and secure <strong>REST API</strong> integrations bridging <strong>Genesys Cloud CX</strong>, <strong>Dynamics 365</strong>, <strong>Microsoft Dataverse</strong>, and backend microservices for automated customer verification.</li>
-            <li>Delivered unified <strong>omnichannel contact center</strong> capabilities spanning inbound/outbound voice, web chat, email, and digital messaging channels to elevate both customer satisfaction (CSAT) and agent workspace efficiency.</li>
-            <li>Diagnosed and resolved complex call flow, omnichannel routing, CRM connector, and telephony defects, including <strong>SIP signaling</strong> anomalies and production incidents.</li>
-            <li>Collaborated with cross-functional business stakeholders, engineering squads, QA testers, and release managers across solution design, integration testing, production cutover, and operational handover.</li>
+            <li>Configured and implemented scalable <strong>Genesys Cloud CX (PureCloud)</strong> and <strong>Microsoft Dynamics 365 Contact Center</strong> environments.</li>
+            <li>Architected and optimized <strong>IVR call flows</strong>, <strong>ACD queue routing</strong>, and skills-based routing strategies in <strong>Genesys Architect</strong>.</li>
+            <li>Developed and maintained <strong>Genesys Data Actions</strong> and secure <strong>REST API</strong> integrations bridging Genesys Cloud CX, Dynamics 365, and Dataverse.</li>
+            <li>Delivered unified <strong>omnichannel contact center</strong> capabilities across voice, web chat, email, and digital messaging channels.</li>
+            <li>Diagnosed and resolved complex call flow, routing, CRM connector, and <strong>SIP signaling</strong> defects.</li>
           </ul>
         </div>
 
         <!-- Infosys Ltd -->
-        <div class="card timeline-item">
+        <div class="card-3d timeline-item tilt-card">
           <div class="role-header">
             <span class="role-title">Senior Associate Consultant</span>
             <span class="role-date">Oct 2022 – Dec 2025</span>
           </div>
           <div class="role-company">Infosys Ltd · Gurgaon, India</div>
           <ul class="role-bullets">
-            <li>Delivered full-lifecycle <strong>Genesys Cloud CX</strong> contact center implementations and legacy-to-cloud migrations covering architecture design, configuration, integration testing, deployment, and post-production support.</li>
-            <li>Integrated <strong>Genesys Cloud CX</strong> with enterprise CRM platforms including <strong>Salesforce Service Cloud (CTI)</strong> and <strong>Microsoft Dynamics 365</strong>, enabling unified 360-degree customer context and reducing Average Handle Time (AHT).</li>
-            <li>Engineered reusable <strong>Genesys Data Actions</strong> and <strong>AWS Lambda</strong> backend functions for real-time REST API orchestration, powering personalized IVR self-service and automated transactional workflows.</li>
-            <li>Administered multi-division <strong>Genesys Cloud CX</strong> organizations, managing user provisioning, Role-Based Access Control (RBAC), divisions, wrap-up codes, queues, routing profiles, and license optimization.</li>
-            <li>Built intelligent <strong>IVR systems</strong> and omnichannel routing rules that improved First Contact Resolution (FCR) and streamlined call distribution across tiered agent groups.</li>
-            <li>Implemented conversational <strong>Virtual Agents</strong> using <strong>Google Dialogflow</strong>, <strong>Amazon Lex</strong>, and <strong>Microsoft Copilot Studio</strong> to automate repetitive tier-1 customer queries and lower live-agent dependency.</li>
-            <li>Monitored platform health and bot accuracy using <strong>AWS CloudWatch</strong>, <strong>Genesys Cloud Analytics</strong>, and custom logs, proactively tuning NLU intents, slots, and speech-to-text recognition.</li>
-            <li>Authored comprehensive architecture documentation, operational runbooks, SOPs, and training guides for client engineering and operations teams to accelerate platform adoption.</li>
+            <li>Delivered full-lifecycle <strong>Genesys Cloud CX</strong> implementations and legacy-to-cloud migrations across design, testing, and production support.</li>
+            <li>Integrated <strong>Genesys Cloud CX</strong> with <strong>Salesforce Service Cloud (CTI)</strong> and <strong>Microsoft Dynamics 365</strong> to enable 360-degree agent context and reduce AHT.</li>
+            <li>Engineered reusable <strong>Genesys Data Actions</strong> and <strong>AWS Lambda</strong> functions for real-time REST API orchestration and personalized IVR self-service.</li>
+            <li>Implemented conversational <strong>Virtual Agents</strong> using <strong>Google Dialogflow</strong>, <strong>Amazon Lex</strong>, and <strong>Copilot Studio</strong> to automate tier-1 queries.</li>
           </ul>
         </div>
 
         <!-- Moksa Technologies -->
-        <div class="card timeline-item">
+        <div class="card-3d timeline-item tilt-card">
           <div class="role-header">
             <span class="role-title">Associate Consultant</span>
             <span class="role-date">Jan 2020 – Oct 2022</span>
           </div>
           <div class="role-company">Moksa Technologies · Gurgaon, India</div>
           <ul class="role-bullets">
-            <li>Configured and administered <strong>Genesys Cloud CX</strong> and <strong>Genesys PureEngage</strong> environments across multi-site enterprise contact center deployments.</li>
-            <li>Monitored real-time and historical contact center KPIs using <strong>CCPulse</strong>, <strong>Hyperion</strong>, and <strong>Pulse</strong> dashboards to enforce SLA compliance and support workforce capacity planning.</li>
-            <li>Managed the end-to-end ITIL incident lifecycle via enterprise ticketing systems, handling incident triage, SLA prioritization, vendor escalation, resolution, and change closure.</li>
-            <li>Investigated and resolved complex production issues by analyzing <strong>Genesys logs</strong>, <strong>GAX</strong> and <strong>CME</strong> configurations, <strong>SIP traces</strong>, Sangoma media gateway routing, and platform alerts.</li>
-            <li>Conducted structured <strong>Root Cause Analysis (RCA)</strong> for major P1/P2 outages and coordinated with internal network teams and third-party telecom carriers to deploy permanent fixes.</li>
-            <li>Refined <strong>IVR call flows</strong>, holiday schedules, prompt announcements, and omnichannel queue routing strategies to enhance agent occupancy and caller experience.</li>
-            <li>Administered user onboarding, security permissions, skill assignments, and <strong>RBAC</strong> policies across production and UAT contact center environments.</li>
-            <li>Planned and executed maintenance windows, firmware updates, security patches, and version upgrades with minimal downtime and zero service disruption.</li>
+            <li>Configured and administered <strong>Genesys Cloud CX</strong> and <strong>Genesys PureEngage</strong> environments across multi-site enterprise deployments.</li>
+            <li>Monitored real-time and historical contact center KPIs using <strong>CCPulse</strong>, <strong>Hyperion</strong>, and <strong>Pulse</strong> dashboards to maintain SLA compliance.</li>
+            <li>Managed ITIL incident lifecycles and performed <strong>Root Cause Analysis (RCA)</strong> using Genesys logs, GAX, CME, and SIP trace diagnostics.</li>
           </ul>
         </div>
 
@@ -836,26 +1066,26 @@
     <!-- Education & Certifications Section -->
     <section id="education">
       <div class="section-tag">CREDENTIALS</div>
-      <h2 class="section-title">Education, Certifications &amp; Recognition</h2>
+      <h2 class="section-title">Education &amp; Recognition</h2>
       <div class="grid-2">
-        <div class="card">
+        <div class="card-3d tilt-card">
           <div class="section-tag">EDUCATION</div>
-          <h3 style="font-size: 1.2rem; margin-bottom: 6px;">Bachelor of Technology (B.Tech) — Electronics &amp; Communication Engineering</h3>
-          <p style="color: var(--accent); font-weight: 600; font-size: 0.9rem; margin-bottom: 12px;">Dr. A.P.J. Abdul Kalam Technical University (AKTU), Lucknow · 2015 – 2019</p>
-          <p style="color: var(--text-muted); font-size: 0.9rem;">
-            <strong>Senior Secondary (Class XII) &amp; Secondary (Class X) Education:</strong> S.S.M. Senior Secondary School, Gorakhpur (CBSE Board)
+          <h3 style="font-size: 1.12rem; margin-bottom: 6px;">B.Tech in Electronics &amp; Communication Engineering</h3>
+          <p style="color: var(--accent); font-weight: 600; font-size: 0.88rem; margin-bottom: 8px;">Dr. A.P.J. Abdul Kalam Technical University (AKTU), Lucknow · 2015 – 2019</p>
+          <p style="color: var(--text-muted); font-size: 0.86rem;">
+            Senior Secondary (XII) &amp; Secondary (X) — S.S.M. Senior Secondary School, Gorakhpur (CBSE)
           </p>
         </div>
 
-        <div class="card">
+        <div class="card-3d tilt-card">
           <div class="section-tag">CERTIFICATIONS &amp; AWARDS</div>
-          <h3 style="font-size: 1.2rem; margin-bottom: 6px;">Genesys Cloud CX Certified Partner</h3>
-          <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 16px;">
-            Certified in enterprise Genesys Cloud CX implementation, administration, and call flow architecture (Valid through November 2026).
+          <h3 style="font-size: 1.12rem; margin-bottom: 4px;">Genesys Cloud CX Certified Partner</h3>
+          <p style="color: var(--text-muted); font-size: 0.86rem; margin-bottom: 12px;">
+            Enterprise Genesys Cloud CX implementation &amp; Architect certification (Valid through Nov 2026).
           </p>
-          <h3 style="font-size: 1.15rem; color: var(--accent); margin-bottom: 4px;">Infosys Insta Award · 2x Recipient</h3>
-          <p style="color: var(--text-muted); font-size: 0.9rem;">
-            Recognized twice for technical excellence, rapid issue resolution, and high-impact client delivery on enterprise contact center transformations.
+          <h3 style="font-size: 1.05rem; color: var(--accent); margin-bottom: 2px;">Infosys Insta Award (2x Recipient)</h3>
+          <p style="color: var(--text-muted); font-size: 0.86rem;">
+            Awarded twice for exceptional delivery on enterprise contact center transformations.
           </p>
         </div>
       </div>
@@ -863,24 +1093,189 @@
 
     <!-- Contact Section -->
     <section id="contact">
-      <div class="card contact-box">
-        <div class="section-tag">GET IN TOUCH</div>
-        <h2 style="font-size: 2.2rem; font-weight: 800; margin-bottom: 14px;">Let’s build better customer experiences.</h2>
-        <p style="color: var(--text-secondary); max-width: 660px; margin: 0 auto 30px auto;">
-          Available for enterprise CCaaS architecture, Genesys Cloud CX, Microsoft Dynamics 365 Contact Center, IVR design, Conversational AI automation, and CRM/API integration initiatives.
+      <div class="card-3d contact-box tilt-card">
+        <div class="section-tag">CONTACT</div>
+        <h2 style="font-size: 2rem; font-weight: 800; margin-bottom: 10px;">Let’s connect.</h2>
+        <p style="color: var(--text-secondary); max-width: 600px; margin: 0 auto 24px auto; font-size: 0.95rem;">
+          Available for enterprise CCaaS architecture, Genesys Cloud CX, Dynamics 365 Contact Center, IVR design, and Conversational AI consulting.
         </p>
-        <div style="display: flex; gap: 14px; justify-content: center; flex-wrap: wrap;">
-          <a href="mailto:sdfrmgkp09@gmail.com" class="btn-primary">Email: sdfrmgkp09@gmail.com</a>
-          <a href="tel:+917518333121" class="btn-secondary">Call: +91-7518333121</a>
-          <a href="https://wa.me/917518333121" target="_blank" rel="noopener noreferrer" class="btn-secondary">WhatsApp</a>
+        <div style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
+          <a href="mailto:sdfrmgkp09@gmail.com" class="btn-3d">sdfrmgkp09@gmail.com</a>
+          <a href="tel:+917518333121" class="btn-outline-3d">+91-7518333121</a>
+          <a href="https://wa.me/917518333121" target="_blank" rel="noopener noreferrer" class="btn-outline-3d">WhatsApp</a>
         </div>
       </div>
     </section>
   </main>
 
   <footer class="footer">
-    <p>© 2026 Saurabh Deep Rai · Technical Specialist &amp; Senior Contact Center Consultant · Gurgaon, Haryana, India</p>
+    <p>© 2026 Saurabh Deep Rai · Technical Specialist &amp; Senior CCaaS Consultant · Gurgaon, India</p>
   </footer>
 
+  <!-- ==================== FLOATING 3D AI PORTFOLIO CHATBOT ==================== -->
+  <button class="chatbot-launcher" onclick="toggleChat()" aria-label="Toggle Portfolio Assistant">
+    <span>💬 AI Portfolio Bot</span>
+  </button>
+
+  <div id="chatbotWindow" class="chatbot-window">
+    <div class="chat-header">
+      <div class="chat-header-info">
+        <div class="chat-bot-avatar">AI</div>
+        <div class="chat-header-text">
+          <h4>Saurabh's Virtual Agent</h4>
+          <span><span class="status-dot"></span> Online · CCaaS &amp; AI Assistant</span>
+        </div>
+      </div>
+      <button class="chat-close" onclick="toggleChat(false)" title="Minimize">✕</button>
+    </div>
+
+    <div id="chatMessages" class="chat-messages">
+      <div class="msg msg-bot">
+        Hi! 👋 I'm <strong>Saurabh Deep Rai's AI Portfolio Bot</strong>. Choose any topic below or type a question to explore his profile:
+      </div>
+    </div>
+
+    <!-- Ever-present quick options matching every section on the portfolio -->
+    <div class="chat-options-tray">
+      <div class="chat-options-label">Quick Options</div>
+      <div class="chat-chips">
+        <button class="chat-chip" onclick="handleBotOption('about')">About</button>
+        <button class="chat-chip" onclick="handleBotOption('experience')">Experience</button>
+        <button class="chat-chip" onclick="handleBotOption('ccaas')">CCaaS &amp; Skills</button>
+        <button class="chat-chip" onclick="handleBotOption('ai')">AI &amp; Voicebots</button>
+        <button class="chat-chip" onclick="handleBotOption('projects')">Projects</button>
+        <button class="chat-chip" onclick="handleBotOption('credentials')">Credentials</button>
+        <button class="chat-chip" onclick="handleBotOption('contact')">Contact</button>
+      </div>
+    </div>
+
+    <form class="chat-input-bar" onsubmit="handleUserSubmit(event)">
+      <input id="chatInput" type="text" placeholder="Ask about Genesys, Zensar, AI, contact..." autocomplete="off" />
+      <button type="submit" class="chat-send-btn">Send</button>
+    </form>
+  </div>
+
+  <script>
+    // Subtle 3D Mouse Tilt Effect for all .tilt-card elements
+    document.querySelectorAll('.tilt-card').forEach(function(card) {
+      card.addEventListener('mousemove', function(e) {
+        var rect = card.getBoundingClientRect();
+        var x = e.clientX - rect.left;
+        var y = e.clientY - rect.top;
+        var centerX = rect.width / 2;
+        var centerY = rect.height / 2;
+        var rotateX = ((y - centerY) / centerY) * -4.5;
+        var rotateY = ((x - centerX) / centerX) * 4.5;
+        card.style.transform = 'perspective(1000px) rotateX(' + rotateX.toFixed(2) + 'deg) rotateY(' + rotateY.toFixed(2) + 'deg) translateY(-4px)';
+      });
+      card.addEventListener('mouseleave', function() {
+        card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) translateY(0)';
+      });
+    });
+
+    // Chatbot Logic & Knowledge Base grounded in portfolio sections
+    var chatWindow = document.getElementById('chatbotWindow');
+    var chatMessages = document.getElementById('chatMessages');
+    var chatInput = document.getElementById('chatInput');
+
+    function toggleChat(forceState) {
+      if (typeof forceState === 'boolean') {
+        chatWindow.classList.toggle('hidden', !forceState);
+      } else {
+        chatWindow.classList.toggle('hidden');
+      }
+    }
+
+    var botData = {
+      about: {
+        label: 'About Saurabh',
+        reply: '<strong>Saurabh Deep Rai</strong> is a <strong>Technical Specialist at Zensar Technologies</strong> and Senior Contact Center Consultant based in Gurgaon, India, with <strong>7+ years of experience</strong> across Genesys Cloud CX, Genesys Engage, Microsoft Dynamics 365 Contact Center, IVR design, omnichannel routing, and Conversational AI.',
+        section: '#about'
+      },
+      experience: {
+        label: 'Work Experience',
+        reply: '<strong>Career Timeline (7+ Years):</strong><br>• <strong>Zensar Technologies</strong> — Technical Specialist (Aug 2026 – Present)<br>• <strong>Deloitte India</strong> — Senior Consultant (Dec 2025 – Aug 2026)<br>• <strong>Infosys Ltd</strong> — Senior Associate Consultant (Oct 2022 – Dec 2025)<br>• <strong>Moksa Technologies</strong> — Associate Consultant (Jan 2020 – Oct 2022)',
+        section: '#experience'
+      },
+      ccaas: {
+        label: 'CCaaS & Skills',
+        reply: '<strong>Core CCaaS &amp; Technical Stack:</strong><br>• <strong>Platforms:</strong> Genesys Cloud CX (PureCloud), Genesys Engage (PureEngage), Microsoft Dynamics 365 Contact Center<br>• <strong>Routing &amp; Tooling:</strong> Genesys Architect, Data Actions, ACD, Skills-Based Routing, CCPulse, Hyperion, GAX, WebRTC, SIP<br>• <strong>CRM &amp; Cloud:</strong> Salesforce CTI, Dataverse, REST APIs, AWS Lambda, Python, SQL',
+        section: '#skills'
+      },
+      ai: {
+        label: 'AI & Voicebots',
+        reply: '<strong>Conversational AI &amp; GenAI Expertise:</strong><br>Builds intelligent self-service Voicebots and Chatbots using <strong>Microsoft Copilot Studio</strong>, <strong>Amazon Lex</strong>, <strong>Google Cloud Dialogflow (ES/CX)</strong>, <strong>OpenAI LLMs</strong>, Power Automate, and n8n—driving <strong>10–15% call deflection</strong> and <strong>15–20% self-service containment lift</strong>.',
+        section: '#skills'
+      },
+      projects: {
+        label: 'Key Projects',
+        reply: '<strong>Highlighted Impact:</strong><br>1. <strong>AI-Powered Virtual Agent &amp; GenAI Integration:</strong> Achieved 10–15% call deflection with Amazon Lex, Copilot Studio, Genesys Cloud CX &amp; OpenAI.<br>2. <strong>Self-Service Containment &amp; Dynamic IVR Redesign:</strong> Delivered 15–20% containment lift using Genesys Architect &amp; Data Actions.',
+        section: '#projects'
+      },
+      credentials: {
+        label: 'Credentials & Education',
+        reply: '<strong>Credentials &amp; Education:</strong><br>• <strong>Certification:</strong> Genesys Cloud CX Certified Partner (Valid through Nov 2026)<br>• <strong>Award:</strong> 2x Infosys Insta Award Winner<br>• <strong>Education:</strong> B.Tech in Electronics &amp; Communication Engineering, AKTU Lucknow (2015 – 2019)',
+        section: '#education'
+      },
+      contact: {
+        label: 'Contact Details',
+        reply: '<strong>Reach Saurabh Directly:</strong><br>📧 <a href="mailto:sdfrmgkp09@gmail.com" style="text-decoration:underline;color:#38bdf8;">sdfrmgkp09@gmail.com</a><br>📞 <a href="tel:+917518333121" style="text-decoration:underline;color:#38bdf8;">+91-7518333121</a><br>💬 <a href="https://wa.me/917518333121" target="_blank" style="text-decoration:underline;color:#34d399;">Chat on WhatsApp</a><br>📍 Gurgaon, Haryana, India',
+        section: '#contact'
+      }
+    };
+
+    function appendMessage(text, sender, sectionHash) {
+      var div = document.createElement('div');
+      div.className = 'msg ' + (sender === 'user' ? 'msg-user' : 'msg-bot');
+      div.innerHTML = text;
+      if (sender === 'bot' && sectionHash) {
+        var btn = document.createElement('a');
+        btn.href = sectionHash;
+        btn.className = 'msg-jump-btn';
+        btn.textContent = 'Jump to section →';
+        div.appendChild(document.createElement('br'));
+        div.appendChild(btn);
+      }
+      chatMessages.appendChild(div);
+      chatMessages.scrollTop = chatMessages.scrollHeight;
+    }
+
+    function handleBotOption(key) {
+      var item = botData[key];
+      if (!item) return;
+      appendMessage(item.label, 'user');
+      setTimeout(function() {
+        appendMessage(item.reply, 'bot', item.section);
+      }, 180);
+    }
+
+    function handleUserSubmit(e) {
+      e.preventDefault();
+      var q = chatInput.value.trim();
+      if (!q) return;
+      chatInput.value = '';
+      appendMessage(q, 'user');
+
+      var lower = q.toLowerCase();
+      var matchedKey = 'about';
+      if (lower.includes('zensar') || lower.includes('deloitte') || lower.includes('infosys') || lower.includes('moksa') || lower.includes('experience') || lower.includes('work') || lower.includes('job') || lower.includes('role')) {
+        matchedKey = 'experience';
+      } else if (lower.includes('ai') || lower.includes('bot') || lower.includes('copilot') || lower.includes('lex') || lower.includes('dialogflow') || lower.includes('openai')) {
+        matchedKey = 'ai';
+      } else if (lower.includes('ccaas') || lower.includes('genesys') || lower.includes('skill') || lower.includes('dynamics') || lower.includes('ivr') || lower.includes('sip') || lower.includes('api')) {
+        matchedKey = 'ccaas';
+      } else if (lower.includes('project') || lower.includes('achievement') || lower.includes('deflection') || lower.includes('containment')) {
+        matchedKey = 'projects';
+      } else if (lower.includes('cert') || lower.includes('award') || lower.includes('education') || lower.includes('b.tech') || lower.includes('degree')) {
+        matchedKey = 'credentials';
+      } else if (lower.includes('contact') || lower.includes('email') || lower.includes('phone') || lower.includes('call') || lower.includes('whatsapp') || lower.includes('hire')) {
+        matchedKey = 'contact';
+      }
+
+      setTimeout(function() {
+        appendMessage(botData[matchedKey].reply, 'bot', botData[matchedKey].section);
+      }, 220);
+    }
+  </script>
 </body>
 </html>
